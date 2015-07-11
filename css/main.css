@@ -2,11 +2,78 @@
 ================================================================================
 WSP COMPONENT LIBRARY STYLESHEET
 ================================================================================ */
+/* BASE STYLES ======================================== */
 
+body {
+	background: white;
+	font: normal 100%/1.5 "source-sans-pro", sans-serif;
+	margin: 0 auto;
+	max-width: 90%;
+	padding: 30px 0;
+}
 
+img {
+	max-width: 100%;
+	height: auto;
+	overflow: auto;
+}
 
+section {
+	margin: 90px auto;
+}
+
+section::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+section > div {
+	background: white;
+	margin: 0 auto;
+	padding: 1%;
+	width: 90%;
+}
+/* HEADING STYLES ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "atomic-age", sans-serif;
+	font-weight: 800;
+}
 /* HEADER SPECIFIC ======================================== */
 
+header,
+footer {
+	width: 100%;
+	height: 90px;
+	background: #eeeeee;
+	padding: 2% 5%;
+}
 /* ABOUT SPECIFIC ======================================== */
-
 /* COMPONENTS SPECIFIC ======================================== */
+
+#gallery article {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+}
+
+article {
+	margin-bottom: 30px;
+}
+
+.even {
+	background: #eeeeee;
+}
+
+@media (min-width: 600px) {
+	#gallery article {
+		width: 100%;
+		float: left;
+	}
+}
