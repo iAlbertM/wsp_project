@@ -143,7 +143,7 @@ background-position: center center;
 		box-shadow: 0px 0px 15px rgba(0,0,0,.8);
 	z-index:2;
 }
-@media (min-width:320px){
+@media (min-width:320px) and (max-width: 700px) {
 	header {
 		background: rgba(43, 46, 55, 1);
 	}
