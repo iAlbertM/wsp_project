@@ -1,40 +1,23 @@
 /* 
-================================================================================
 WSP COMPONENT LIBRARY STYLESHEET
-================================================================================ */
-/* BASE STYLES ======================================== */
+css by: Albert Martinez
+class: WSP 1507 
+*/
+
+/* BASE STYLES */
 
 body {
-	background: white;
-	font: normal 100%/1.5 "source-sans-pro", sans-serif;
-	margin: 0 auto;
-	max-width: 90%;
-	padding: 30px 0;
+	background: rgba(43, 46, 55, .3);
+	font: normal 100%/1.5 'Source Sans Pro', sans-serif;
+	width: 100%;
 }
 
 img {
 	max-width: 100%;
-	height: auto;
-	overflow: auto;
 }
 
-section {
-	margin: 90px auto;
-}
 
-section::after {
-	clear: both;
-	content: "";
-	display: table;
-}
-
-section > div {
-	background: white;
-	margin: 0 auto;
-	padding: 1%;
-	width: 90%;
-}
-/* HEADING STYLES ======================================== */
+/* TYPOGRAPHY  */
 
 h1,
 h2,
@@ -42,38 +25,135 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "atomic-age", sans-serif;
-	font-weight: 800;
+	font-family: 'Museo Sans', sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
 }
-/* HEADER SPECIFIC ======================================== */
+
+h1,
+h2,
+h3 {
+	font-weight: 900;
+	letter-spacing: 0.15em;
+}
+
+h4,
+h5,
+h6 {
+	font-weight: 500;
+	letter-spacing: 0.10em;
+}
+
+h1, footer p {
+	color: #fff;
+	text-align: center;
+}
+
+h2 {
+	font-size: 3em;
+	color: rgb(138, 137, 141);
+	padding: 1em 0 0 0;
+	margin-bottom: 20px;
+}
+
+h3 {
+	font-size: 2em;
+	color: rgba(139, 139, 141, 1);
+	margin-bottom: 1em;
+	padding: 1em 0;
+}
+
+h4 {
+	font-size: 1em;
+	color: rgba(139, 139, 141, 1);
+	padding: 1em 0 .5em 0;
+}
+
+p {
+	line-height: calc(16*10%); /* my experiment. Works/looks great @ zoom: 25% & zoom: 500% */
+	margin-bottom: 1em;
+}
+
+
+/* HEADER SPECIFIC  */
 
 header,
 footer {
 	width: 100%;
-	height: 90px;
-	background: #eeeeee;
-	padding: 2% 5%;
+	max-height: 110px;
+	background: rgba(43, 46, 55, 1) url('../img/logo.png') no-repeat;
+background-position: center center;
+	border: 1px Solid rgba(0, 0, 0, 0.3);
+	padding: 5%;
+		box-shadow: 0px 0px 15px rgba(0,0,0,.8);
+	z-index:2;
 }
-/* ABOUT SPECIFIC ======================================== */
-/* COMPONENTS SPECIFIC ======================================== */
 
-#gallery article {
+/* ABOUT SPECIFIC  */
+
+section:first-of-type {
+	background: rgba(43, 46, 55, .9);
+/* rgba(43,39,36,1)*/
+	width: 100%;
+	height: 100%;
+	color: rgba(255,255,255,.7);
+	width: 100%;
+	padding-left: calc( 100% * .03);
+	padding-right: calc( 100% * .03);
+	padding-bottom: 10%;
+}
+
+section > img {
+	width: 20%;
+	float:left;
+	position: relative;
+	display:inline;
+	margin-right: 2em;
+}
+
+
+/* COMPONENTS SPECIFIC  */
+
+section:last-of-type {
+	display: block;
+	max-width: 1200px;
+	width: 100%;
+	margin: 90px auto;
+}
+
+section:last-of-type article {
+	background: #fff;
+	display: block;
 	box-sizing: border-box;
 	width: 100%;
-	padding: 20px;
+	margin: 90px auto;
+	padding: 5px calc(100%*.03) 10% calc(100%*.03);
+	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+	border: outset 1px rgba(255,255,255,.5);
 }
 
-article {
-	margin-bottom: 30px;
-}
+/* RESPONSIVE STYLING */
 
-.even {
-	background: #eeeeee;
-}
-
-@media (min-width: 600px) {
-	#gallery article {
-		width: 100%;
-		float: left;
+@media (min-width: 500px) {
+	h3 {
+		font-size: calc( 2rem * (1 + 1 * 0.05));
 	}
 }
+
+@media (min-width: 700px) {
+	h3 {
+		font-size: calc( 2rem * (1 + 2 * 0.05));
+	}
+}
+
+@media (min-width: 900px) {
+	h3 {
+		font-size: calc( 2rem * (1 + 3 * 0.05));
+	}
+}
+
+@media (min-width: 1200px) {
+	section {
+		max-width: 1200px;
+		margin: auto;
+	}
