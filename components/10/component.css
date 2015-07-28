@@ -1,8 +1,110 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700);
 /* 
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
+/* BASE STYLES 
+======================================== */
 
-/* HEADER ======================================== */
+body {
+	width: 100%;
+	font: 400 normal 100%/1.5 "Source Sans Pro" sans-serif;
+	color: hsl(0, 0%, 80%);
+}
 
-/* HEADER ======================================== */
+section::before,
+section::after,
+div:last-child {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* FOOTER - COMPONENT SPECIFIC STYLES
+======================================== */
+
+footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: rgb(49, 59, 69);
+	padding-bottom: 30px;
+}
+
+.wrapper {
+	padding: 9%;
+}
+
+section {
+	width: 100%;
+	display: inline-block;
+	padding-bottom: 2%;
+}
+
+@media (min-width: 600px) {
+	footer {
+		padding-bottom: 30px;
+	}
+	.wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0;
+	}
+	section {
+		display: inline-block;
+		float: left;
+		max-width: 109px;
+		margin: 30px;
+	}
+}
+/* LINKS
+======================================== */
+
+.wrapper > ul {
+	display: inline-block;
+}
+
+footer .wrapper > ul li {
+	display: inline;
+	margin-right: 20px;
+}
+
+footer .wrapper > ul li:not(:last-child)::after {
+	content: "•";
+	margin: 0 10px;
+}
+/* TYPOGRAPHY
+======================================== */
+
+footer h2 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 1.3em;
+	font-weight: 700;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+
+footer a,
+footer a:link {
+	color: hsla(0, 0%, 70%, .8);
+	font-size: 1em;
+}
+
+footer a:hover {
+	color: hsla(0, 0%, 100%, 1);
+	text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+	.wrapper > ul {
+		display: inline-block;
+	}
+	footer .wrapper > ul li {
+		display: inline;
+		margin-right: 20px;
+	}
+	footer h2 {
+		font-size: 1em;
+		margin-bottom: 6px;
+	}
+}
