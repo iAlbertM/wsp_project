@@ -25,10 +25,13 @@ img { width: 100%; }
 ul { width: 90%; }
 
 li > a {
-	float: left;
 	text-indent: -999px;
 }
-
+@media (min-width: 600px) {
+	li > a {
+		float: left;
+	}
+}
 /* TYPOGRAPHY
 ======================================== */
 h2 {
@@ -37,6 +40,7 @@ h2 {
 	letter-spacing: .2em;
 	text-transform: uppercase;
 	color: #474747;
+	text-align: center;
 }
 
 h3 {
@@ -66,7 +70,7 @@ ul {
 section li a{
 	list-style-type: none;
 	float: left;
-	width: calc((100% / 6) * 1 - 14px);
+	width: calc((100% / 2) * 1 - 14px);
 	padding: 1em;
 	text-indent: -99999px;
 }
@@ -103,15 +107,34 @@ section li a{
 	background-size: contain;
 }
 
+@media (min-width: 600px) {
+	h2 {
+		text-align: left;
+	}
+	ul {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	section li a{
+		list-style-type: none;
+		float: left;
+		width: calc((100% / 6) * 1 - 14px);
+		padding: 1em;
+		text-indent: -99999px;
+	}
+
+}
+
 /* TESTIMONIAL AUTHOR + INFO
 ======================================== */
 article {
 	padding: 3% 5%;
-	display: flex;
+	text-align: center;
 }
 
 .authorInfo img {
-	max-width: 20%;
+	max-width: 40%;
 	margin: auto;
 	border-radius: 100%;
 }
@@ -122,26 +145,56 @@ article {
 }
 
 .authorInfo p {
-	font-size: .75em;
-	color: lightgray;
+	font-size: 1em;
+	color: gray;
 }
 .authorInfo, .quote {
-	display: flex;
-	flex: 1 1 50%;
 	text-align: center;
-	flex-direction: column;
 }
 
 .quote {
-	font-weight: 900;
-	font-size:1.2em;
-	line-height: 1.3em;
-	text-align: left;
-	color: black;
+	font-weight: 600;
+	font-size:1.5em;
+	line-height: 1.5em;
+	color: black;	
 }
 
 @media (min-width: 600px) {
-	
+	article {
+		padding: 3% 5%;
+		display: flex;
+	}
+
+	.authorInfo img {
+		max-width: 20%;
+		margin: auto;
+		border-radius: 100%;
+	}
+
+	.authorInfo h3 {
+		color: black;
+		font-weight: 900;
+	}
+
+	.authorInfo p {
+		font-size: .75em;
+		color: lightgray;
+	}
+	.authorInfo, .quote {
+		display: flex;
+		flex: 1 1 50%;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.quote {
+		font-weight: 900;
+		font-size:1.2em;
+		line-height: 1.3em;
+		text-align: left;
+		color: black;
+	}
+
 	
 }
 

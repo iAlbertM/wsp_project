@@ -12,13 +12,6 @@ body {
 	color: hsl(0, 0%, 50%);
 }
 
-section {
-	position: relative;
-	width: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-}
-
 section::before,
 section::after {
 	content: "";
@@ -28,101 +21,146 @@ section::after {
 
 img { width: 100%; }
 
-ul { width: 90%; }
-
-li > a {
-	float: left;
-	text-indent: -999px;
-}
-
 /* TYPOGRAPHY
 ======================================== */
-h2, h3{
-	font-size: 1.5em;
-	font-weight: 900;
+h2, h3, section input[type="button"]{
+	font-family: "Source Sans Pro", sans-serif;
 	letter-spacing: .2em;
 	text-transform: uppercase;
+}
+section h2 {
+	font-size: 2em;
+	font-weight: 100;
 	color: #1d1d1d;
+	background: lightgray; 
 }
 
-h3 {
-	font-size: 1.2em;
-	font-weight: 700;
+section form h3 {
+	font-size: 1.5em;
+	font-weight: 100;
+}
+
+@media (min-width: 700px) {
+	section h2 {
+		font-size: 1.6em;
+	}
+	section form h3 {
+		font-size: 1.2em;
+	}	
 }
 
 /* COMPONENT SPECIFIC STYLES
 ======================================== */
-section {
-	background: lightgray; /* my personal preference instead of having the smaller box around the about area. Cleaner and a little more modern aesthetic and a litle more me*/
+h2, h3, form, p {
+	padding: 3% 8%;
+	
 }
 section h2, section h3 {
-	padding: 6% 3% 2%;
+	padding: 6% 5%;
+	
 }
 section p {
-	font-size: 0.75em;
+	font-size: 1.125em;
 }
 section > p {
-	width: 38%;
-	padding: 0 16% 5% 3%;
-	float: left;
+	padding-bottom: 10%;
+	background: lightgray; 
 }
 
-/* PHOTO
-======================================== */
-section img {
-	max-width: 32%;
-	position: absolute;
-	top: 44%;
-	left: 26%;
+@media (min-width: 700px) {
+	/* section {background: lightgray;} my personal preference instead of having the smaller box like in my component photo (around the 'About' area). Cleaner and a little more modern aesthetic and a little more me*/
+	section {
+		position: relative;
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	section h2, section h3 {
+		padding: 6% 3% 2%;
+	}
+	section p {
+		font-size: 1em;
+	}
+	section > p {
+		width: 100%;
+		padding: 0 78% 5% 3%;
+		float: left;
+	}
 }
+
 
 /* NEWSLETTER FORM
 ======================================== */
 section form {
 	width: 100%;
-	padding: 0 3% 7.8% 3%;
-	position: absolute;
-	max-width: 21%;
-	top: 75%;
-	left: 51%;
 	background: #1d1d1d;
 }
 
-form > h3 {
-	color: white;
-}
+form > h3 { color: white; }
 
-section form input {
+form input {
 	width: 100%;
 	background: black;
 	border:1px solid #2d2d2d;
-	margin-top: 15%;
-	padding: 3% 7%;
-	font-size: 0.75em;
-	text-transform: uppercase;
+	margin-top:5%;
+	margin-bottom: 20%;
+	padding: 6% 5%;
+	font-size: 1em;
 	color: hsl(0, 0%, 50%);
-	border-radius: 3px;
-
+	border-radius: 5px;
 }
-
-section form input[type="email"]:hover, section form input[type="email"]:focus  {
+form input[type="email"]:hover
+form input[type="email"]:focus {
 	background: hsla(0,0%, 30%, .9);
-	color: #1d1d1d;
-	transition: all 250ms 250ms ease-in-out;
-	
+	color: white;	
 }
 
-section form input[type="button"] {
+form input[type="button"] {
 	color: white;
-	padding: 7% 0%;
-	box-shadow: 0 2px 1px 1px black;
+	font-weight:400;
+	box-shadow: 0 1px 2px 1px #fff;
 }
-section form input[type="button"]:hover  {
-	transition: all 250ms 250ms ease-in-out;
+form input[type="button"]:hover  {
 	background: #4d4d4d;
 	border: 1px outset white;
-	box-shadow: 0 3px 1px 0px black;
+}
 
 
+@media (min-width: 700px) {
+	section img {
+		max-width: 35%;
+		position: absolute;
+		top: 44%;
+		left: 29%;
+	}
 
+	form {
+		padding: 0 3% 7.6% 3%;
+		position: absolute;
+		max-width: 34%;
+		top: 76%;
+		left: 55%;
+	}
 
+	form input {
+		width: 100%;
+		background: black;
+		border:1px solid #2d2d2d;
+		margin-top: 5%;
+		margin-bottom: 0;
+		padding: 3% 7% 0%;
+		font-size: 0.75em;
+		text-transform: uppercase;
+		color: hsl(0, 0%, 50%);
+		border-radius: 3px;
+	}
+
+	form input[type="button"] {
+		padding: 7% 0%;
+		box-shadow: 0 2px 1px 1px black;
+	}
+	form input[type="button"]:hover  {
+		border: 1px outset white;
+		box-shadow: 0 3px 1px 0px black;
+	}
+}

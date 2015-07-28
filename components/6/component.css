@@ -19,7 +19,7 @@ body {
 	width: 90%;
 	font: 400 normal 100%/1.5 'Roboto', sans-serif;
 	color: hsl(0, 0%, 50%);
-	background-color: hsl(212, 25%, 15%);
+	background-color: hsl(215, 47%, 81%);
 }
 
 section::before {
@@ -41,12 +41,12 @@ img {
 	text-transform: uppercase;
 	line-height: 1.5em;
 	letter-spacing: .2em;
-	color: hsl(0, 0%, 85%);
+	color: hsl(0, 0%, 100%);
 }
 
 .feature p {
 	font-size: 1.75em;
-	color: hsla(0, 0%, 80%, .76);
+	color: hsla(0, 0%, 100%, .76);
 	margin-top: calc(100% * (25 / 744));
 }
 
