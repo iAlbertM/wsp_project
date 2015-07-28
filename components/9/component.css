@@ -3,6 +3,126 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
+/* BASE STYLES 
+======================================== */
 
-/* HEADER ======================================== */
+body {
+	width: 100%;
+	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
+	color: hsl(0, 0%, 50%);
+}
+
+section {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+section::before,
+section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+img { width: 100%; }
+
+ul { width: 90%; }
+
+li > a {
+	float: left;
+	text-indent: -999px;
+}
+
+/* TYPOGRAPHY
+======================================== */
+h2, h3{
+	font-size: 1.5em;
+	font-weight: 900;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color: #1d1d1d;
+}
+
+h3 {
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+/* COMPONENT SPECIFIC STYLES
+======================================== */
+section {
+	background: lightgray; /* my personal preference instead of having the smaller box around the about area. Cleaner and a little more modern aesthetic and a litle more me*/
+}
+section h2, section h3 {
+	padding: 6% 3% 2%;
+}
+section p {
+	font-size: 0.75em;
+}
+section > p {
+	width: 38%;
+	padding: 0 16% 5% 3%;
+	float: left;
+}
+
+/* PHOTO
+======================================== */
+section img {
+	max-width: 32%;
+	position: absolute;
+	top: 44%;
+	left: 26%;
+}
+
+/* NEWSLETTER FORM
+======================================== */
+section form {
+	width: 100%;
+	padding: 0 3% 7.8% 3%;
+	position: absolute;
+	max-width: 21%;
+	top: 75%;
+	left: 51%;
+	background: #1d1d1d;
+}
+
+form > h3 {
+	color: white;
+}
+
+section form input {
+	width: 100%;
+	background: black;
+	border:1px solid #2d2d2d;
+	margin-top: 15%;
+	padding: 3% 7%;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	color: hsl(0, 0%, 50%);
+	border-radius: 3px;
+
+}
+
+section form input[type="email"]:hover, section form input[type="email"]:focus  {
+	background: hsla(0,0%, 30%, .9);
+	color: #1d1d1d;
+	transition: all 250ms 250ms ease-in-out;
+	
+}
+
+section form input[type="button"] {
+	color: white;
+	padding: 7% 0%;
+	box-shadow: 0 2px 1px 1px black;
+}
+section form input[type="button"]:hover  {
+	transition: all 250ms 250ms ease-in-out;
+	background: #4d4d4d;
+	border: 1px outset white;
+	box-shadow: 0 3px 1px 0px black;
+
+
+
+

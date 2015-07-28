@@ -3,6 +3,123 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
 
-/* HEADER ======================================== */
+/* BASE STYLES 
+======================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+* {
+	outline: 1px dashed lightgray;
+}
+body {
+	width: 100%;
+	height: 100%;
+	font:400 normal 100%/1.5 'Source Sans Pro', sans-serif;
+	color: hsl(0, 0%, 50%)
+}
+
+section::before {
+	content: "";
+	display: table;
+	clear: both;;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 15% auto;
+}
+
+img { max-width:100%;}
+
+
+
+/* TYPOGRAPHY
+======================================== */
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3em;
+	line-height: 1.5em;
+	font-weight: 900;
+	color: hsl(0, 0%, 40%);
+}
+h2::after {
+	content: "";
+	width: 20%;
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	border-bottom: 5px solid rgb(140, 207, 80);
+}
+
+
+/* LEADING TEXT
+======================================== */
+
+
+p.lead {
+	margin: 0 auto 10% auto;
+	text-align: center;
+	padding: 5%;
+	color: hsl(0, 0%, 70%)
+}
+
+/* COPY AND SKILLS
+======================================== */
+p.lead ~ div > p {
+	padding: 2% 5%;
+	margin-bottom: 2%;
+}
+
+.lead ~ ul {
+/*
+	width: calc(100% / 12 * 5);
+	float: right;
+*/
+}
+li {
+/*	width: calc(100% / 12 * 5); */
+}
+meter {
+	width: 100%; 
+}
+
+@media (min-width: 541px) {
+	.wrapper {
+		margin: auto;
+	}
+	
+	h2 {
+		line-height: 3em;
+	}
+	
+	h2::after {
+		content: "";
+		width: 10%;
+		position: absolute;
+		top: 15%;
+		left: 45%;
+		border-bottom: 5px solid rgb(140, 207, 80);
+	}
+	
+	p.lead {
+		padding: 5% 25%;
+	}
+	
+	.lead ~ ul {
+		width: calc(100% / 12 * 5);
+		float: right;
+	}
+	
+	p ~ div {
+		width: calc(100% / 12 * 5 );
+		float: left;
+	}
+	
+	
+}

@@ -3,6 +3,120 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
 
-/* HEADER ======================================== */
+
+/* BASE STYLES ======================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	width: 100%;
+	font: normal 100%/1.5 'Roboto', sans-serif;
+	background: url('bg.jpg') repeat top center;
+}
+
+img {
+	max-width:100%;
+}
+
+/* SECTION
+======================================== */
+section {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/* ARTICLE
+======================================== */
+section article {
+	background: linear-gradient(to right,#dedede 0%,white 50%,#ccc 150%);
+	width: 90%;
+	margin: 1em auto;
+	padding: 1em;
+	border-bottom: 2px inset hsla(0, 100%, 100%, .5);
+	border-top: 2px solid rgba(0,70,20,.5);
+	border-left: 2px solid rgba(0,70,20,.5);
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, .3), 
+				1px 1px 1px 0px rgba(100, 100, 100, .5);
+	border-radius: .35em;
+}
+
+/* IMG
+======================================== */
+section img {
+	position: absolute;
+	right: 0;
+	padding-right: 2em;
+}
+
+
+/* TYPOGRAPHY
+======================================== */
+article h2 {
+	font:400 normal 1.125em/1.5;
+	text-transform: uppercase;
+	color: dimgray;
+}
+h2 span {
+	font-weight: 700;
+	color: #474747;
+}
+
+p > a {
+	font:700 normal .8em/1 'Source Sans Pro', sans-serif;
+	display: block;
+	padding-top: 3.5em;
+	text-shadow: 2px 2px 1px hsla(0, 100%, 100%, 1);
+	color: rgb(133,138,133);
+}
+
+
+/* MEDIA QUERIES
+======================================== */
+@media (min-width: 477px) {
+	section article {
+		position: relative;
+		width: calc(100% / 3 * 1.4);
+		float:left;
+		margin: .5em;
+	}
+	section img {
+		width: 55%;
+		padding-right: ;
+	}
+}
+
+
+@media (min-width: 709px) {
+	section {
+		padding: calc(100% * .010);
+		max-width: 960px;
+		max-height: 960px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	section img {
+		max-height: (100% - (100% * .10px));
+		position: absolute;
+		bottom: 0;
+		right: 5%;
+	}
+}
+
+
+@media (min-width: 720px){
+	section article {
+		position: relative;
+		width: calc(100% / 12 * 4 - 20px);
+		max-width: 308px;
+		max-height: 108px;
+		float: left;
+	}
+}

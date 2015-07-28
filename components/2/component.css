@@ -3,6 +3,79 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
 
-/* HEADER ======================================== */
+/* BASE STYLES 
+======================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	background: url("bg.jpg") no-repeat top left;
+	width: 100%;
+	height: 100%;
+	font: normal 100%/1.5 'Roboto', sans-serif;
+}
+
+
+/* SECTION 
+======================================== */
+section {
+	width: 100%;
+	color: rgba(255,255,255,.75);
+	padding-bottom: 5em;
+	margin-top:10em;
+	
+}
+
+
+/* TYPOGRAPHY 
+======================================== */
+h2, p {
+	color: hsla(0, 0%, 100%, .75);
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 3em;
+	line-height: 2;
+	text-transform: uppercase;
+	letter-spacing: .16em;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+p {
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: .2em;
+	text-align:center;
+	font-size: .95em;
+}
+
+
+/* LINKS
+======================================== */
+
+p > a {
+	padding: 1em 3em;
+	background: #F8CD1C;
+	max-width: 226px;
+	max-height: 45px;
+	margin-bottom: .5em;
+	color: rgb(40,43,49);
+}
+p:last-child {
+	margin-top: 5em;
+}
+p:nth-child(2n) > a {
+	max-width: 140px;
+	max-height: 45px;
+	background: rgb(40, 43, 49);
+	border: 1px solid #f8cd1c;
+	color: #f8cd1c;
+}
+

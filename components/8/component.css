@@ -3,6 +3,157 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
+/* BASE STYLES 
+======================================== */
+/** { outline: 1px dashed; }*/
 
-/* HEADER ======================================== */
+body {
+	width: 100%;
+	margin: auto;
+	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
+	color: hsl(0, 0%, 50%);
+}
+
+section::before, section::after  {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+img { width: 100%; }
+
+ul { width: 90%; }
+
+li > a {
+	float: left;
+	text-indent: -999px;
+}
+
+/* TYPOGRAPHY
+======================================== */
+h2 {
+	font-size: 1.5em;
+	font-weight: 900;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color: #474747;
+}
+
+h3 {
+	font-size: 1em;
+	font-weight: 500;
+}
+
+p {
+	padding: 1em;
+}
+
+/* CLIENT LIST
+======================================== */
+section {
+	max-width: 90%;
+	margin: 0 auto;
+}
+section:first-child {
+	margin-bottom: 5%;
+}
+
+ul {
+	width: 100%;
+	margin: 0 auto;
+}
+
+section li a{
+	list-style-type: none;
+	float: left;
+	width: calc((100% / 6) * 1 - 14px);
+	padding: 1em;
+	text-indent: -99999px;
+}
+
+#microsoft { 
+	background: url('client.jpg') no-repeat center center;
+	opacity: .5;
+	background-size: contain;
+}
+
+#nbc { 
+	background: url('client.jpg') no-repeat center center;
+	opacity: .5;
+	background-size: contain;
+}
+#usa { 
+	background: url('client.jpg') no-repeat center center;
+	opacity: .5;
+	background-size: contain;
+}
+#redbull { 
+	background: url('client.jpg') no-repeat center center;
+	opacity: .5;
+	background-size: contain;
+}
+#sony { 
+	background: url('client.jpg') no-repeat center center;
+	opacity: .5;
+	background-size: contain;
+}
+#ga { 
+	background: url('client.jpg') no-repeat center center;
+	opacity: .5;
+	background-size: contain;
+}
+
+/* TESTIMONIAL AUTHOR + INFO
+======================================== */
+article {
+	padding: 3% 5%;
+	display: flex;
+}
+
+.authorInfo img {
+	max-width: 20%;
+	margin: auto;
+	border-radius: 100%;
+}
+
+.authorInfo h3 {
+	color: black;
+	font-weight: 900;
+}
+
+.authorInfo p {
+	font-size: .75em;
+	color: lightgray;
+}
+.authorInfo, .quote {
+	display: flex;
+	flex: 1 1 50%;
+	text-align: center;
+	flex-direction: column;
+}
+
+.quote {
+	font-weight: 900;
+	font-size:1.2em;
+	line-height: 1.3em;
+	text-align: left;
+	color: black;
+}
+
+@media (min-width: 600px) {
+	
+	
+}
+
+
+/* TESTIMONIAL QUOTE
+======================================== */
+
+
+
+
+
+
+
+
+

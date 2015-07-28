@@ -16,8 +16,6 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video,
 ::before, ::after {
-
-	box-sizing: border-box;
 	margin: 0; 
 	padding: 0;
 	border: 0;
@@ -28,25 +26,35 @@ time, mark, audio, video,
 	
 }
 
+/* CSS BOX MODEL - Box Sizing Property for Correct Widths 
+======================================== */
+html { box-sizing: border-box; }
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
 /* HTML5 - Older browser support ======================================== */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section { 
 	display: block;
 }
 
 /* BODY ======================================== */
-body { line-height: 1; }
+body { line-height: 1.5; }
 
 /* LISTS - Clear bullets ======================================== */
 ol, ul { list-style: none; }
 
 /* QUOTES ======================================== */
-blockquote, q { quotes: none; }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
+blockquote, q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+q:before, blockquote:before { content: open-quote; }
+q:after, blockquote:after { content: close-quote; }
 
 /* TABLES ======================================== */
 table {

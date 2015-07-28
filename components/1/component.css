@@ -2,7 +2,191 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
+/* BASE STYLES
+----------------------- */
+html {
+  box-sizing: border-box;
+}
 
-/* HEADER ======================================== */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-/* HEADER ======================================== */
+body {
+	background: white;
+	width: 100%;
+	font: normal 100%/1.5 "source-sans-pro", sans-serif;
+}
+
+section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/* TYPOGRAPHY 
+----------------------- */
+h1,h2,h3,h4,h5,h6 {
+	font-family:"Source Sans Pro", sans-serif;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+	
+/* HEADER
+----------------------- */
+header {
+	width: 100%;
+	margin: 0;
+	padding: 1em;
+}
+@media (min-width: 712px) {
+	header {
+		margin-top: 4em;
+		padding-top: 2em;
+	}
+	.wrapper {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	}
+}
+
+/* LOGO
+----------------------- */
+h1 {
+	font-size: 1.875em; /*30px/16px*/
+	font-weight: 200;
+	letter-spacing: 0.2em;
+	margin-right: 1em;
+	width: 100%;
+	text-align: center;
+}
+@media (min-width: 712px) {
+	h1 {
+		text-align: left;
+		font-size: 1.875em; /*30px/16px*/
+		font-weight: 200;
+		float:left;
+		width: auto;
+	}
+}
+/* NAV
+----------------------- */
+nav {
+	text-transform: uppercase;
+}
+
+li {
+	display:block;
+	background: #efefef;
+	padding: 1em;
+	margin: 5px 10px 5px 0;
+	text-align: center;
+}
+
+a {
+	font: 0.75em/1 "Source Sans Pro", sans-serif;
+	color: dimgray;
+}
+
+a.active {
+	color: lightgray;
+}
+
+@media (min-width: 712px) {
+	nav {position: relative;}
+	
+	li {display:inline-block; margin: 5px 10px 5px 0; 	
+		background: #fff; padding: 0;}
+
+	a {font: 0.75em/1 "Source Sans Pro", sans-serif; 
+	   color: dimgray;}
+
+	a.active {color: lightgray;}
+}
+
+
+
+/* SECTION (UTILITY NAV)
+----------------------- */
+ul:last-child {
+	position:absolute;
+	top: 0;
+	left: 0;
+	padding: 1em;
+	width: 100%;
+	display: inline-block;
+	width: 100%;
+	max-height: 60px;
+	font-size: 0.625em;
+}
+ul::before {
+	content: "";
+	display: block;
+	position: absolute; 
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 5%;
+	background: rgba(240,240,235,1);
+}
+/*ul:last-child {
+	float: left;
+	height: 50%;
+	padding: 15px 0;
+	font-size: 0.625em;
+}
+*/
+header form {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	padding: 15px 0;
+}
+
+header form input {
+	border-bottom:1px solid lightgray;
+	float: right;
+/*    margin: 20px 0;*/
+}
+/*MEDIA QUERY
+@media only screen and (max-width : 600) {
+
+	header {
+		position: relative;
+	}
+
+	#menu-icon {
+		display:inline-block;
+	}
+
+	section > ul { 
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: #fff;
+		border: 5px solid #444;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+	}
+/*
+
+	nav li {
+
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+
+	}
+
+	nav:hover ul {
+
+		display: block;
+
+	}*/

@@ -3,6 +3,230 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
 
-/* HEADER ======================================== */
+/* BASE STYLES 
+======================================== */
+html {
+	font-size: 16px;
+}
+body {
+	width: 100%;
+	margin: auto;
+	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
+	color: hsl(0, 0%, 50%);
+}
+section::before {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* TYPOGRAPHY
+======================================== */
+h2 {
+	font-size: 1.75em;
+	font-weight: 900;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color: rgb(44,45,46);
+}
+
+h3 {
+	font-size: 2em;
+	font-weight: 500;
+	color: white;
+}
+
+h3 span {
+	font-size: 1.5em;
+}
+
+P {
+	font-size: 1em;
+}
+
+
+/* MAIN CONTAINERS
+======================================== */
+section {
+	margin: auto;
+	width: 100%;
+	position: relative;
+}
+
+.wrapper {
+	max-width:90%;
+    margin: auto;
+}
+
+article {
+	width: 100%;
+    display: inline-block;
+    background: rgb(180, 141, 81);
+}
+
+.description {
+	max-width: 100%;
+	float: right;
+}
+
+
+
+article h2 {
+	font-size: 1.75em;
+	font-weight: 900;
+	line-height: 1.5em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: rgb(44,45,46);
+	background: white;
+	display:block;
+	width: 100%;
+	padding: 10%;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+}
+
+article h3 {
+	font-size: 1.5em;
+	font-weight: 500;
+	color: hsla(0, 0%, 100%, 0.75);
+	padding: .5em 0 .5em 1em;
+}
+
+article h3 span {
+	font-size: 1.5em;
+}
+
+article p:first-of-type {
+	font-size: 1.75em;
+    color: hsla(0, 0%, 100%, 1);
+    padding: 0 10% 4% 10%;
+    background: rgb(180, 141, 81);
+}
+
+p ~ p {
+	background: rgb(44,45,46);
+}
+
+p > a {
+	font-size: 1.75em;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 900;
+	display: block;
+	width: 100%;
+	background: rgb(44,45,46);
+	padding: 10%;
+	color: rgb(234, 164, 57);
+}
+	
+@media (min-width: 600px) {	
+	section {
+		max-width: 1000px;
+		margin-top: 10%;
+	}
+	
+	.wrapper {
+		display: block;
+		max-width: 1000px;
+		margin: auto;
+	}
+	
+	article {
+		max-width: 90%;	
+	}
+		
+	article h2 {
+		font-size: 1.8em;
+		display: inline-block;
+		float: left;
+		text-align: left;
+		padding: 45px;
+		max-width: 57%;
+		word-break: break-word;
+	}
+
+	.description {
+		max-width: calc(100% - (.57 * 100%));
+		float: right;
+	}
+	
+	article h3 {
+		font-size: 1em;
+		font-weight: 900;
+		padding: .5% 0 .5% 10%;
+	}
+
+	article h3 span {
+		font-size: 1.5em;
+	}
+
+	article p:first-of-type {
+		font-size: 1em;
+		color: hsla(0, 0%, 100%, 1);
+		margin-top: calc(100% * (25 / 744));
+		background: rgb(180, 141, 81);
+		padding-bottom: 10%;
+	}
+
+	.description p ~ p {
+		background: rgb(44,45,46);
+	}
+	
+	.description p > a {
+		font-size: 1em;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 900;
+		display: block;
+		width: 100%;
+		background: rgb(44,45,46);
+		padding: 1%;
+		color: rgb(234, 164, 57);
+	}
+}
+
+/* PAGINATION CONTROLS
+======================================== */
+section ul {
+	margin-top: 10%;
+}
+
+section li {
+	display: inline-block;
+}
+
+section li a {
+	display: block;
+	margin-right: 10px;
+	text-indent: -9999px;
+	background:  rgb(215,216,217);
+	border-radius: 100%;
+	width: 15px;
+	height: 15px;
+	transition: background .5s linear;
+}
+
+section li a:hover {
+	transition: background .5s linear;
+	background: rgb(234, 164, 57);
+}
+
+@media (min-width: 600px) {
+	section ul {
+		display: block;
+		max-width: 900px;
+		margin: 0 auto;
+		position: relative;
+		bottom:0;
+	}
+	
+	section li {
+		position: absolute		
+	}
+	
+}
