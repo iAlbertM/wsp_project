@@ -37,22 +37,20 @@ section {
 ======================================== */
 h2, p {
 	color: hsla(0, 0%, 100%, .75);
+	text-align: center;
 }
 
 h2 {
-	font-family: 'Roboto', sans-serif;
 	font-size: 3em;
 	line-height: 2;
 	text-transform: uppercase;
 	letter-spacing: .16em;
-	text-align: center;
 	margin-bottom: 1em;
 }
 
 p {
 	font-family: 'Roboto Condensed', sans-serif;
 	letter-spacing: .2em;
-	text-align:center;
 	font-size: .95em;
 }
 
@@ -60,18 +58,18 @@ p {
 /* LINKS
 ======================================== */
 
-p > a {
+section a {
 	padding: 1em 3em;
-	background: #F8CD1C;
 	max-width: 226px;
 	max-height: 45px;
 	margin-bottom: .5em;
+}
+section p:first-of-type a {
+	background: #F8CD1C;
 	color: rgb(40,43,49);
 }
-p:last-child {
-	margin-top: 5em;
-}
-p:nth-child(2n) > a {
+
+p:last-of-type a:last-child{
 	max-width: 140px;
 	max-height: 45px;
 	background: rgb(40, 43, 49);
