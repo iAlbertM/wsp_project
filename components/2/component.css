@@ -45,7 +45,6 @@ h2 {
 	line-height: 2;
 	text-transform: uppercase;
 	letter-spacing: .16em;
-	margin-bottom: 1em;
 }
 
 p {
@@ -55,25 +54,56 @@ p {
 }
 
 
+
+
 /* LINKS
 ======================================== */
 
-section a {
-	padding: 1em 3em;
-	max-width: 226px;
-	max-height: 45px;
-	margin-bottom: .5em;
+section p a {
+	box-sizing: border-box;
+	padding: 3em 9em;
+	display: block;
+	margin: auto;
+	border-radius: 3px;
+	width: 90%;
 }
-section p:first-of-type a {
+
+section > p > a {
+	padding: 7%;
+	margin-top: 10%;
 	background: #F8CD1C;
+	border:1px solid hsla(0,0%,100%,1) ;
 	color: rgb(40,43,49);
 }
 
-p:last-of-type a:last-child{
-	max-width: 140px;
-	max-height: 45px;
-	background: rgb(40, 43, 49);
+p:last-child a {
+	background: rgb(30, 33, 39);
 	border: 1px solid #f8cd1c;
 	color: #f8cd1c;
+	width: 70%;
 }
 
+@media (min-width: 700px) {
+	section p a {
+	box-sizing: border-box;
+	display: inline-block;
+	margin-top: 5%;
+	border-radius: 3px;
+	max-height: 93px;
+}
+
+section > p > a {
+	padding: 1%;
+	background: #F8CD1C;
+	border:1px solid hsla(0,0%,100%,1) ;
+	color: rgb(40,43,49);	
+	width: auto;
+}
+
+p:last-child a {
+	background: rgb(30, 33, 39);
+	border: 1px solid #f8cd1c;
+	color: #f8cd1c;
+	width: auto;
+}
+}
