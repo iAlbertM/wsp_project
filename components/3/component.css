@@ -4,21 +4,10 @@ COMPONENT STYLESHEET
 ================================================================================ */
 
 
-
 /* BASE STYLES ======================================== */
 
-html {
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-	box-sizing: inherit;
-}
-
-body {
-	width: 100%;
+section:first-of-type {
 	font: normal 100%/1.5 'Roboto', sans-serif;
-	background: url('bg.jpg') repeat top center;
 }
 
 img {
@@ -27,25 +16,26 @@ img {
 
 /* SECTION
 ======================================== */
-section {
+body > section {
 	width: 100%;
 	margin: 0 auto;
+	background: linear-gradient(to right, hsla(0, 0%, 100%,.2) 0%, rgba(0,50,0, .4) 50%,  hsla(0, 0%, 100%,.2) 100%), url("bg.jpg") repeat;
 }
 
 
 /* ARTICLE
 ======================================== */
-section article {
+section section {
 	background: linear-gradient(to right,#dedede 0%,white 50%,#ccc 150%);
-	width: 90%;
-	margin: 1em auto;
+	width: 100%;
+	margin: 0 auto 1em auto;
 	padding: 1em;
 	border-bottom: 2px inset hsla(0, 100%, 100%, .5);
 	border-top: 2px solid rgba(0,70,20,.5);
 	border-left: 2px solid rgba(0,70,20,.5);
 	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, .3), 
 				1px 1px 1px 0px rgba(100, 100, 100, .5);
-	border-radius: .35em;
+/*	border-radius: .35em;*/
 }
 
 /* IMG
@@ -59,7 +49,7 @@ section img {
 
 /* TYPOGRAPHY
 ======================================== */
-article h2 {
+section h2 {
 	font:400 normal 1.125em/1.5;
 	text-transform: uppercase;
 	color: dimgray;
@@ -80,30 +70,39 @@ p > a {
 
 /* MEDIA QUERIES
 ======================================== */
-@media (min-width: 477px) {
-	section article {
-		position: relative;
-		width: calc(100% / 3 * 1.4);
-		float:left;
-		margin: .5em;
-	}
-	section img {
-		width: 55%;
-		padding-right: ;
-	}
-}
-
-
-@media (min-width: 709px) {
-	section {
+@media (min-width: 477px){
+	body > section {
 		padding: calc(100% * .010);
 		max-width: 960px;
 		max-height: 960px;
 		margin: 0 auto;
 		overflow: hidden;
 	}
+
+	section > section {
+		position: relative;
+		width: calc(100% / 3 * 1.4);
+		float:left;
+		margin: .5em;
+	}
+}
+
+@media (min-width: 709px) {
+	body > section {
+		padding: .2%;
+		max-width: 960px;
+		max-height: 960px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	section > section {
+		position: relative;
+		width: calc(100% / 3 * 1.4);
+		float:left;
+		margin: .5em;
+	}
 	section img {
-		max-height: (100% - (100% * .10px));
+		max-height: (100% - 100% * .10px);
 		position: absolute;
 		bottom: 0;
 		right: 5%;
@@ -112,7 +111,7 @@ p > a {
 
 
 @media (min-width: 720px){
-	section article {
+	section section {
 		position: relative;
 		width: calc(100% / 12 * 4 - 20px);
 		max-width: 308px;

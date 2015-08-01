@@ -4,46 +4,50 @@ css by: Albert Martinez
 class: WSP 1507 
 */
 
-/* BASE STYLES */
+/* BASE STYLES
+======================================== */
+* {
+	box-sizing: border-box;
+}
 
 body {
 	background: rgba(43, 46, 55, .3);
 	font: normal 100%/1.5 'Source Sans Pro', sans-serif;
-	width: 100%;
 }
 
 img {
 	max-width: 100%;
 	margin: 0 auto;
 }
+.wrapper {
+	max-width: 1200px;
+	margin: auto;
+}
 
-
-/* TYPOGRAPHY  */
+/* TYPOGRAPHY
+======================================== */
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-	font-family: "source sans pro", sans-serif;
+h4 {
+	font-family: "Source Sans Pro", sans-serif;
 	line-height: 1;
+	text-transform: uppercase;
 }
 
 h1,
 h2,
 h3 {
-	font-weight: 900;
+	font-weight: 400;
 	letter-spacing: 0.15em;
-	text-transform: uppercase;
 }
 
 h4,
 h5,
 h6 {
-	font-weight: 500;
+	font-weight: 700;
 	letter-spacing: 0.10em;
-	text-transform: capitalize;
 }
 
 h1, footer p {
@@ -54,74 +58,96 @@ h1, footer p {
 h1 {
 	font-size: 1.5em;
 	text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
+	position: relative;
 }
-
+h2::after {
+	content: "";
+	display: block;
+	width: calc(100% / 12 * 3);
+	height: 1px;
+	margin: 20px 0;
+	border-bottom: 1px solid rgba(57, 122, 162, 0.79);
+}
 h2 {
 	font-size: 3em;
 	color: rgba(139, 139, 141, 1);
-	padding: 1em 0 0 0;
-	margin-bottom: 20px;
+	padding: 1em 0 0 5%;
 }
 
 h3 {
-	font-size: 2em;
+	font-size: 2.5em;
+	font-weight: 300;
 	color: rgba(139, 139, 141, .8);
 	margin-bottom: 1em;
 	padding: 1em 0;
 }
-
+h3 > span {
+	text-transform: lowercase;
+	font-size: .8em;
+}
 h4 {
 	font-size: 1em;
+	font-weight: 300;
 	color: rgba(100, 100, 100, .6);
 	padding: 1em 0 .5em 0;
 }
 
 p {
-	line-height: calc(16px*10%); /* my experiment. Works/looks great @ zoom: 25% & zoom: 500% */
-	margin-bottom: 1em;
-}
-@media (min-width:320px){
-	h1 {
-		font-size: 1.5em;
-	}
-	h2 {
-		font-size:2em;
-		font-weight:900;
-		text-align: center;
-	}
-	h3 {
-		font-size: 1.75em;
-	}
-	h4 {
-		font-size: 1.5em;
-	}
-	section:first-of-type p {
-		color:rgba(240, 248, 255, 0.71);
-	}
-	p {
+	margin-bottom: .5em;
+	word-spacing: 1px;
+	letter-spacing: .01em;
 		font-size: 150%;
 		color: rgba(105, 105, 105, 0.9);
-	}
 }
+section:first-of-type p {
+	text-align: center;
+}
+
+/* LINKS
+======================================== */
+a {
+	color: inherit;
+}
+a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+/* COMPONENT LINKS
+======================================== */
+p ~ p > a, p ~ p > a:link, a ~ p {
+	display: block;
+	max-width: 100%;
+	text-shadow: 0 1px 0 1px rgba(250,250,250,1);
+	padding: 1em 2em;
+	margin: 40px 0;
+	background-color: rgba(216, 255, 0, 1);
+	color: rgba(35, 160, 88, 0.62);
+	box-shadow: 0 3px 1px rgba(0,0,0,.3);
+	border:1px ridge rgb(214, 247, 140);
+	text-align: center;
+	transition-property: all;
+	transition-duration: .5s;
+}
+
+p ~ p > a, p ~ p > a:hover, p ~ p > a:active, a ~ p {
+	transition-property: all;
+	transition-duration: .5s;
+	box-shadow: 0 6px 9px 1px rgba(0,0,0,.3);
+}
+
+
+@media (min-width: 600px) {
+	section {
+		padding: 0 6% 10%;
+	}
 	
-@media (min-width: 700px) {
-	h1 {
-		font-size: 1.3em;
-	}
-	h2 {
-		font-size:2em;
-		font-weight:900;
+	p ~ p > a, p ~ p > a:link, a ~ p {
+		max-width: 40%;
+		padding: 20px;
 	}
 }
-@media (min-width: 900px) {
-	h2 {
-		font-size:2em;
-		font-weight:900;
-	}
-	h3 {
-		font-size: 2.3em;
-	}
-}
+
 @media (min-width: 1200px) {
 	section {
 		max-width: 1200px;
@@ -130,57 +156,59 @@ p {
 }
 
 
-/* HEADER SPECIFIC  */
-
+/* HEADER
+======================================== */
 header,
 footer {
 	width: 100%;
 	max-height: 110px;
-	background: rgba(43, 46, 55, 1) url('../img/logo.png') no-repeat;
-background-position: center center;
+	background: url('../img/logo.png') no-repeat left,
+		linear-gradient(	
+			rgba(57, 122, 162, 0.79),
+			rgba(70, 143, 188, 0.89) 50%,
+			rgb(102, 168, 203) 100%);
 	border: 1px Solid rgba(0, 0, 0, 0.3);
-	padding: 5%;
-		box-shadow: 0px 0px 15px rgba(0,0,0,.8);
-	z-index:2;
+	padding: 3%;
+	box-shadow: 0 0 15px rgba(0,0,0,.8);
 }
-@media (min-width:320px) and (max-width: 700px) {
-	header {
-		background: rgba(43, 46, 55, 1);
+
+@media (min-width: 600px) {
+	header, footer {
+		max-height: 50px;
 	}
 }
-/* ABOUT SPECIFIC  */
+
+
+
+/* ABOUT
+======================================== */
 
 section:first-of-type {
-	background: rgba(43, 46, 55, .9);
-/* rgba(43,39,36,1)*/
-	width: 100%;
-	height: 100%;
-	color: rgba(255,255,255,.7);
-	width: 100%;
-	padding-left: 3%;
-	padding-right:3%;
-	padding-bottom: 10%;
-}
-
-section > img {
-	width: 20%;
-	float:left;
-	position: relative;
-	display:inline;
-	margin-right: 2em;
+	background: #eee;
+	color: rgba(0,0,0,.7);
+	max-width: 100%;
 }
 
 
-/* COMPONENTS SPECIFIC  */
 
-section:last-of-type {
-	display: block;
-	max-width: 1200px;
-	width: 100%;
-	margin: 90px auto;
+@media (min-width: 600px) {
+	section:first-of-type .wrapper img {
+		width: 30%;
+		display: block;
+		margin: 0 auto 20px;
+	}
 }
 
-section:last-of-type article {
+
+/* COMPONENTS
+======================================== */
+
+section {
+	max-width: 100%;
+	margin: 0 auto 90px;
+}
+
+section article {
 	background: #fff;
 	display: block;
 	box-sizing: border-box;
@@ -188,38 +216,13 @@ section:last-of-type article {
 	height:auto;
 	margin: 90px auto;
 	padding: 5px 10%;
-	box-shadow: 0px 3px 15px rgba(0,0,0,.25);
+	box-shadow: 0 3px 15px rgba(0,0,0,.25);
 	border: outset 1px rgba(255,255,255,.5);
-
 }
-
-p>a, p>a:link {
-	display: inline-block;
-	text-shadow: 1px 2px 3px rgba(250,250,250,.9);
-	padding: 1em 2em;
-	margin: 20px 0;
-	background-color: rgba(216, 255, 0, 1);
-	color: rgba(35, 160, 88, 0.62);
-	text-transform: capitalize;
-	font-weight: 800;
-	box-shadow: 0px 0px 1px rgba(0,0,0,.3);
-	border: outset 1px rgba(255,255,255,.5);
-	width: auto;
-	text-align: center;
-	transition-property: all;
-	transition-duration: .5s;
-}
-
-a:hover, a:active {
-	background: white;
-	color: rgba(152, 214, 42, 0.77);
-	text-shadow: 5px 4px 1px rgb(0, 0, 0);
-	border: 5px solid rgba(216,255, 0, .9);
-	transition-property: all;
-	transition-duration: .5s;
-}
-@media (min-width: 320px)and (max-width:700px) {
-	section a, section a:link {
-		 width: 100%;
+@media (min-width: 600px) {
+	section:last-of-type img {
+		border-radius: 4px;
+		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+		border:1px inset rgba(255,255,255,.5);
 	}
-}
+

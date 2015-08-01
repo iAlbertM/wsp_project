@@ -3,64 +3,48 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-
-/* BASE STYLES 
-======================================== */
-body {
-	background: url("bg.jpg") no-repeat top;
-	font: normal 100%/1.5 'Roboto', sans-serif;
-}
-
-
 /* SECTION 
 ======================================== */
-section {
-	
-	color: rgba(255,255,255,.75);
-	margin-top:5em;
+section	{
+	background: linear-gradient( to bottom, rgba(255, 255, 255, 0) 0%, rgba(0,0,0,.5) 25%, rgba(0,0,0,.9) 500%),  url("bg.jpg") no-repeat top;
+	background-size: cover;
+	font:100%/1.5 'Source Sans Pro', sans-serif;
+	padding: 100px 0;
 	
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
 	section {
-		margin-top: 20em;
+		font:100%/1.5 'Source Sans Pro', sans-serif;
+		margin: auto;
 	}
-}
-@media (min-width: 1400px) {
-	body {
-		background-size:cover;
-	}
-	
 }
 
 /* TYPOGRAPHY 
 ======================================== */
 h2, p {
-	color: hsla(0, 0%, 100%, .75);
+	color: hsla(0, 0%, 100%, .8);
 	text-align: center;
+	text-transform: uppercase;
+	word-spacing: .15em;
 }
 
 h2 {
 	font-size: 3em;
-	line-height: 2;
-	text-transform: uppercase;
-	letter-spacing: .16em;
+	font-weight: 100;
+	line-height: 1.5;
+	letter-spacing: .26em;
 }
 
 p {
-	font-family: 'Roboto Condensed', sans-serif;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	font-size: .95em;
 }
-
-
-
 
 /* LINKS
 ======================================== */
 
 section p a {
-	box-sizing: border-box;
 	padding: 3em 9em;
 	display: block;
 	margin: auto;
@@ -83,27 +67,28 @@ p:last-child a {
 	width: 70%;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
 	section p a {
-	box-sizing: border-box;
-	display: inline-block;
-	margin-top: 5%;
-	border-radius: 3px;
-	max-height: 93px;
-}
+		padding: 30px 60px;
+		border-radius: 3px;
+		width: 90%;
+		display: inline-block;
+		margin-top: 50px;
+		border-radius: 3px;
+	}
 
-section > p > a {
-	padding: 1%;
-	background: #F8CD1C;
-	border:1px solid hsla(0,0%,100%,1) ;
-	color: rgb(40,43,49);	
-	width: auto;
-}
+	section > p > a {                                                         
+		padding: 1%;
+		background: #F8CD1C;
+		border:1px solid hsla(0,0%,100%,1) ;
+		color: rgb(40,43,49);	
+		max-width: 300px;
+	}
 
-p:last-child a {
-	background: rgb(30, 33, 39);
-	border: 1px solid #f8cd1c;
-	color: #f8cd1c;
-	width: auto;
-}
+	p:last-child a {
+		background: rgb(30, 33, 39);
+		border: 1px solid #f8cd1c;
+		color: #f8cd1c;
+		max-width: 195px;
+	}
 }
