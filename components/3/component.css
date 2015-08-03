@@ -4,61 +4,60 @@ COMPONENT STYLESHEET
 ================================================================================ */
 
 
-/* BASE STYLES ======================================== */
-
-section:first-of-type {
-	font: normal 100%/1.5 'Roboto', sans-serif;
-}
-
-img {
-	max-width:100%;
-}
-
-/* SECTION
+/* CATEGORY SECTIONS
 ======================================== */
-body > section {
-	width: 100%;
-	margin: 0 auto;
-	background: linear-gradient(to right, hsla(0, 0%, 100%,.2) 0%, rgba(0,50,0, .4) 50%,  hsla(0, 0%, 100%,.2) 100%), url("bg.jpg") repeat;
+body {
+	background: -webkit-linear-gradient(left, hsla(0, 0%, 100%,.2) 0%, rgba(0,50,0, .4) 50%, hsla(0, 0%, 100%,.2) 100%), url("bg.jpg") repeat;
+	background: -o-linear-gradient(left, hsla(0, 0%, 100%,.2) 0%, rgba(0,50,0, .4) 50%, hsla(0, 0%, 100%,.2) 100%), url("bg.jpg") repeat;
+	background: linear-gradient(to right, hsla(0, 0%, 100%,.2) 0%, rgba(0,50,0, .4) 50%, hsla(0, 0%, 100%,.2) 100%), url("bg.jpg") repeat;
 }
-
-
-/* ARTICLE
-======================================== */
 section section {
-	background: linear-gradient(to right,#dedede 0%,white 50%,#ccc 150%);
+	background: -webkit-linear-gradient(left, #dedede 0%, white 50%, #ccc 150%);
+	background: -o-linear-gradient(left, #dedede 0%, white 50%, #ccc 150%);
+	background: linear-gradient(to right, #dedede 0%, white 50%, #ccc 150%);
 	width: 100%;
-	margin: 0 auto 1em auto;
-	padding: 1em;
+	margin-bottom: 1em;
+	padding: .5em 1em;
 	border-bottom: 2px inset hsla(0, 100%, 100%, .5);
 	border-top: 2px solid rgba(0,70,20,.5);
 	border-left: 2px solid rgba(0,70,20,.5);
 	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, .3), 
 				1px 1px 1px 0px rgba(100, 100, 100, .5);
-/*	border-radius: .35em;*/
 }
 
-/* IMG
+/* SECTION IMG
 ======================================== */
+img {
+	max-width:100%;
+}
+
 section img {
+	width: 30%;
 	position: absolute;
 	right: 0;
-	padding-right: 2em;
+	padding-right: .1rem;
 }
 
 
 /* TYPOGRAPHY
 ======================================== */
+/* base font stylings */
+section:first-of-type {
+	font: normal 100%/1.5 'Source Sans Pro', sans-serif;
+}
+
+/* heading style 1 */
 section h2 {
-	font:400 normal 1.125em/1.5;
+	font:500 normal 1.125em/1.5;
 	text-transform: uppercase;
 	color: dimgray;
 }
+/* heading style 2*/
 h2 span {
 	font-weight: 700;
-	color: #474747;
+	color: #333;
 }
-
+/* shop now link */
 p > a {
 	font:700 normal .8em/1 'Source Sans Pro', sans-serif;
 	display: block;
@@ -70,39 +69,20 @@ p > a {
 
 /* MEDIA QUERIES
 ======================================== */
-@media (min-width: 477px){
-	body > section {
-		padding: calc(100% * .010);
-		max-width: 960px;
-		max-height: 960px;
-		margin: 0 auto;
-		overflow: hidden;
-	}
 
-	section > section {
-		position: relative;
-		width: calc(100% / 3 * 1.4);
-		float:left;
-		margin: .5em;
-	}
-}
 
-@media (min-width: 709px) {
-	body > section {
-		padding: .2%;
-		max-width: 960px;
-		max-height: 960px;
-		margin: 0 auto;
-		overflow: hidden;
-	}
+@media (min-width: 475px) {
+	
+/* individul sections */
 	section > section {
+		margin-right: .5rem;
 		position: relative;
-		width: calc(100% / 3 * 1.4);
+		max-width: calc(100% / 2 - 1rem / 2);
 		float:left;
-		margin: .5em;
 	}
+/* section img */
 	section img {
-		max-height: (100% - 100% * .10px);
+		width: 40%;
 		position: absolute;
 		bottom: 0;
 		right: 5%;
@@ -111,11 +91,8 @@ p > a {
 
 
 @media (min-width: 720px){
+	section {max-width: 960px; margin:auto;}
 	section section {
-		position: relative;
-		width: calc(100% / 12 * 4 - 20px);
-		max-width: 308px;
-		max-height: 108px;
-		float: left;
+		max-width: calc(100% / 3 - 1.5rem / 3);
 	}
 }

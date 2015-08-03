@@ -3,37 +3,14 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* BASE STYLES 
+/* TYPOGRAPHY
 ======================================== */
-/** { outline: 1px dashed; }*/
-
-body {
-	width: 100%;
-	margin: auto;
+/* base font */
+section {
 	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
 	color: hsl(0, 0%, 50%);
 }
-
-section::before, section::after  {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-img { width: 100%; }
-
-ul { width: 90%; }
-
-li > a {
-	text-indent: -999px;
-}
-@media (min-width: 600px) {
-	li > a {
-		float: left;
-	}
-}
-/* TYPOGRAPHY
-======================================== */
+/* main section headings */
 h2 {
 	font-size: 1.5em;
 	font-weight: 900;
@@ -42,171 +19,132 @@ h2 {
 	color: #474747;
 	text-align: center;
 }
-
+/* testimonial author's name */
 h3 {
-	font-size: 1em;
-	font-weight: 500;
-}
-
-p {
-	padding: 1em;
-}
-
-/* CLIENT LIST
-======================================== */
-section {
-	max-width: 90%;
-	margin: 0 auto;
-}
-section:first-child {
-	margin-bottom: 5%;
-}
-
-ul {
-	width: 100%;
-	margin: 0 auto;
-}
-
-section li a{
-	list-style-type: none;
-	float: left;
-	width: calc((100% / 2) * 1 - 14px);
-	padding: 1em;
-	text-indent: -99999px;
-}
-
-#microsoft { 
-	background: url('client.jpg') no-repeat center center;
-	opacity: .5;
-	background-size: contain;
-}
-
-#nbc { 
-	background: url('client.jpg') no-repeat center center;
-	opacity: .5;
-	background-size: contain;
-}
-#usa { 
-	background: url('client.jpg') no-repeat center center;
-	opacity: .5;
-	background-size: contain;
-}
-#redbull { 
-	background: url('client.jpg') no-repeat center center;
-	opacity: .5;
-	background-size: contain;
-}
-#sony { 
-	background: url('client.jpg') no-repeat center center;
-	opacity: .5;
-	background-size: contain;
-}
-#ga { 
-	background: url('client.jpg') no-repeat center center;
-	opacity: .5;
-	background-size: contain;
-}
-
-@media (min-width: 600px) {
-	h2 {
-		text-align: left;
-	}
-	ul {
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	section li a{
-		list-style-type: none;
-		float: left;
-		width: calc((100% / 6) * 1 - 14px);
-		padding: 1em;
-		text-indent: -99999px;
-	}
-
-}
-
-/* TESTIMONIAL AUTHOR + INFO
-======================================== */
-article {
-	padding: 3% 5%;
-	text-align: center;
-}
-
-.authorInfo img {
-	max-width: 40%;
-	margin: auto;
-	border-radius: 100%;
-}
-
-.authorInfo h3 {
-	color: black;
 	font-weight: 900;
+	color: black;
 }
-
-.authorInfo p {
-	font-size: 1em;
+/* testimonial author's details */
+p {
 	color: gray;
 }
-.authorInfo, .quote {
+h3, p {
 	text-align: center;
+	font-size: 1em;
 }
-
-.quote {
+/* author's testimonial */
+blockquote {
 	font-weight: 600;
 	font-size:1.5em;
 	line-height: 1.5em;
 	color: black;	
 }
 
-@media (min-width: 600px) {
-	article {
-		padding: 3% 5%;
-		display: flex;
-	}
 
-	.authorInfo img {
-		max-width: 20%;
-		margin: auto;
-		border-radius: 100%;
-	}
+/* LAYOUT + SPACING
+======================================== */
+h2 {
+	padding-top: 1em;;
+}
+/* give content room to breathe */
+article {
+	padding: 5%;
+}
+/* center author's photo within container */
+article img {
+	display: block;
+	max-width: 40%;
+	margin: auto;
+	border-radius: 100%;
+}
+/* give sections seperation */
+section section {
+	margin-bottom: 5%;
+}
+/* image replacement */
+h2 + ul li a{
+	float: left;
+	width: calc((100% / 2) * 1 - 14px);
+	padding: 1em;
+	text-indent: -9999px;
+}
+/* General settings for image in replacement */
+h2 + ul li a { 
+	opacity: .5;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+/* images for replacement */
+#microsoft {background-image: url('client.jpg');}
+#nbc {background-image: url('client.jpg');}
+#usa {background-image: url('client.jpg');}
+#redbull {background-image: url('client.jpg');}
+#sony {background-image: url('client.jpg');}
+#ga {background-image: url('client.jpg');}
 
-	.authorInfo h3 {
-		color: black;
-		font-weight: 900;
-	}
+/* PAGINATION CONTROLS
+======================================== */
+/* position pagination */
+body > section:first-child > ul {
+	margin-top: 10px;
+	height: 15px;
+	display: block;
+	float: right;
+}
+/* position list items* horizontally */
+body > section:first-child > ul li {
+	display: inline-block;
+}
+/* image replacement */
+body > section:first-child > ul li a {
+	display: block;
+	margin-right: 10px;
+	text-indent: -9999px;
+	background:  rgb(215,216,217);
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+	transition: all 0.5s ease-in-out;
+}
 
-	.authorInfo p {
-		font-size: .75em;
-		color: lightgray;
-	}
-	.authorInfo, .quote {
-		display: flex;
-		flex: 1 1 50%;
-		text-align: center;
-		flex-direction: column;
-	}
-
-	.quote {
-		font-weight: 900;
-		font-size:1.2em;
-		line-height: 1.3em;
-		text-align: left;
-		color: black;
-	}
-
-	
+body > section:first-child > ul li a:hover {
+	transition: all 0.5s ease-in-out;
+	background: rgb(234, 164, 57);
 }
 
 
-/* TESTIMONIAL QUOTE
-======================================== */
-
-
-
-
-
-
-
-
-
+@media (min-width: 800px) {
+	/* restrain size */
+	body > section {
+		max-width: 960px;
+		margin: auto;
+	}
+	/* clear floats */
+	section::after  {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	/* retain readability for headings */
+	h2 {
+		text-align: left;
+	}
+	/* distribute space for client list evenly */
+	h2 ~ ul > li a{
+		width: calc(100% / 6 - 10rem / 5);
+		margin-right: 2rem;
+		padding: 1em;
+	}
+	/* align content horizontally*/
+	article > section {
+		float: left;
+	}
+	blockquote {
+		float: right;
+	}
+	article > section, blockquote {
+		max-width: calc(100% / 2 - 2rem / 1);
+		margin-right: 2rem;
+	}
+}

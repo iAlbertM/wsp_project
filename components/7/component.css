@@ -3,203 +3,126 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-
-/* BASE STYLES 
+/* TYPOGRAPHY
 ======================================== */
-html {
-	font-size: 16px;
-}
+/* base font */
 body {
-	width: 100%;
-	margin: auto;
 	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
 	color: hsl(0, 0%, 50%);
 }
-section::before {
-	content: "";
-	display: table;
-	clear: both;
-}
 
-img {
-	max-width: 100%;
-}
-
-/* TYPOGRAPHY
-======================================== */
+/* heading 2 */
 h2 {
 	font-size: 1.75em;
-	font-weight: 900;
-	letter-spacing: .2em;
-	text-transform: uppercase;
+	letter-spacing: .1em;
 	color: rgb(44,45,46);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
 }
-
+/* heading 3 */
 h3 {
 	font-size: 2em;
 	font-weight: 500;
+	color: hsla(0, 0%, 100%, 0.75);
+}
+
+/* heading 3 style 2 */
+h3 > span, p {
+	font-size: 1.5em; /*h3>span: 3em /p: 1.5em*/
+}
+/* body copy */
+P {
+	color: hsla(0, 0%, 100%, 1);
+}
+/* headings and cta */
+h2, p + p a {
+	font-weight: 900;
+	text-transform: uppercase;
+}
+/* book now button background*/
+p + p {
+	background: rgb(44,45,46);
+	text-align: center;
+}
+/* book now button link*/
+p > a {
+	color: rgb(180, 141, 81);
+	font-size: 1.5em;
+	text-align: center;
+	transition: all 0.5s ease-in-out
+}
+p > a:hover {
+	transition: all 0.5s ease-in-out;
 	color: white;
 }
-
-h3 span {
-	font-size: 1.5em;
-}
-
-P {
-	font-size: 1em;
-}
-
-
-/* MAIN CONTAINERS
+/* LAYOUT + SPACING
 ======================================== */
-section {
-	margin: auto;
-	width: 100%;
-	position: relative;
+/* spacing around elements */
+	h2, h3, h3 + p {
+	padding: 5%;
 }
 
-.wrapper {
-	max-width:90%;
-    margin: auto;
-}
-
-article {
-	width: 100%;
-    display: inline-block;
-    background: rgb(180, 141, 81);
-}
-
-.description {
-	max-width: 100%;
-	float: right;
+/* background for news feed section */
+article section {
+	background: rgb(180, 141, 81);
 }
 
 
-
-article h2 {
-	font-size: 1.75em;
-	font-weight: 900;
-	line-height: 1.5em;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-	color: rgb(44,45,46);
-	background: white;
-	display:block;
-	width: 100%;
-	padding: 10%;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
-}
-
-article h3 {
-	font-size: 1.5em;
-	font-weight: 500;
-	color: hsla(0, 0%, 100%, 0.75);
-	padding: .5em 0 .5em 1em;
-}
-
-article h3 span {
-	font-size: 1.5em;
-}
-
-article p:first-of-type {
-	font-size: 1.75em;
-    color: hsla(0, 0%, 100%, 1);
-    padding: 0 10% 4% 10%;
-    background: rgb(180, 141, 81);
-}
-
-p ~ p {
-	background: rgb(44,45,46);
-}
-
-p > a {
-	font-size: 1.75em;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 900;
-	display: block;
-	width: 100%;
-	background: rgb(44,45,46);
-	padding: 10%;
-	color: rgb(234, 164, 57);
-}
 	
-@media (min-width: 600px) {	
-	section {
-		max-width: 1000px;
-		margin-top: 10%;
-	}
-	
-	.wrapper {
-		display: block;
-		max-width: 1000px;
-		margin: auto;
-	}
-	
-	article {
-		max-width: 90%;	
-	}
-		
-	article h2 {
-		font-size: 1.8em;
-		display: inline-block;
-		float: left;
-		text-align: left;
-		padding: 45px;
-		max-width: 57%;
-		word-break: break-word;
-	}
-
-	.description {
-		max-width: calc(100% - (.57 * 100%));
-		float: right;
-	}
-	
-	article h3 {
+@media (min-width: 700px) {	
+	/* style copy for desktop */
+	h3 + p {
 		font-size: 1em;
-		font-weight: 900;
-		padding: .5% 0 .5% 10%;
-	}
-
-	article h3 span {
-		font-size: 1.5em;
-	}
-
-	article p:first-of-type {
-		font-size: 1em;
-		color: hsla(0, 0%, 100%, 1);
-		margin-top: calc(100% * (25 / 744));
 		background: rgb(180, 141, 81);
 		padding-bottom: 10%;
 	}
-
-	.description p ~ p {
-		background: rgb(44,45,46);
-	}
-	
-	.description p > a {
-		font-size: 1em;
-		text-align: center;
-		text-transform: uppercase;
-		font-weight: 900;
+	/* adjust book now text 4 desktop */
+	p > a {
 		display: block;
-		width: 100%;
-		background: rgb(44,45,46);
-		padding: 1%;
-		color: rgb(234, 164, 57);
+		font-size: 1em;
+		padding-bottom: 15px;
+	}
+	/* clear floats */
+	article::after {
+	content: "";
+	display: table;
+	clear: both;
+	}
+	/* constrain and center content */
+	.wrapper {
+		max-width: 960px;
+		margin: auto;
+	}
+	/* heading section of news feed */
+	article h2 {
+		float: left;
+		text-align: left;
+		max-width: 50%;
+	}
+	/* align for horizontal layout */
+	section section{
+		max-width: 50%;
+		float: right;
+	}
+	/* space within news feed content*/
+	section > h3, p + p {
+		padding:20px 5% 0;
 	}
 }
 
 /* PAGINATION CONTROLS
 ======================================== */
-section ul {
-	margin-top: 10%;
+/* position pagination */
+ul {
+	margin-top: 10px;
+	height: 20px;
+	display: block;
+	float: right;
 }
-
-section li {
+/* position list items* horizontally */
+ul li {
 	display: inline-block;
 }
-
+/* image replacement */
 section li a {
 	display: block;
 	margin-right: 10px;
@@ -208,25 +131,10 @@ section li a {
 	border-radius: 100%;
 	width: 15px;
 	height: 15px;
-	transition: background .5s linear;
+	transition: all 0.5s ease-in-out;
 }
 
 section li a:hover {
-	transition: background .5s linear;
+	transition: all 0.5s ease-in-out;
 	background: rgb(234, 164, 57);
-}
-
-@media (min-width: 600px) {
-	section ul {
-		display: block;
-		max-width: 900px;
-		margin: 0 auto;
-		position: relative;
-		bottom:0;
-	}
-	
-	section li {
-		position: absolute		
-	}
-	
 }

@@ -25,13 +25,15 @@ time, mark, audio, video,
 	text-decoration: none;
 	
 }
+/* RESPONSIVE IMAGES ======================================== */
+img {max-width: 100%;}
 
 /* CSS BOX MODEL - Box Sizing Property for Correct Widths 
 ======================================== */
 *, html { box-sizing: border-box; }
 *,
 *::after,
-*::before {box-sizing: inherit;}
+*::before { box-sizing: inherit; }
 
 /* HTML5 - Older browser support ======================================== */
 article, aside, details, figcaption, figure,
@@ -39,18 +41,21 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-/* BODY ======================================== */
-body { line-height: 1.5; }
+/* BODY 
+======================================== */
+body { font: 100%/1.5 "Source Sans Pro", sans-serif; }
 
 /* LISTS - Clear bullets ======================================== */
 ol, ul { list-style: none; }
 
-/* QUOTES ======================================== */
+/* QUOTES 
+======================================== */
 blockquote, q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 q:before, blockquote:before { content: open-quote; }
 q:after, blockquote:after { content: close-quote; }
 
-/* TABLES ======================================== */
+/* TABLES 
+======================================== */
 table {
 	border-collapse: collapse;
 	border-spacing: 0;

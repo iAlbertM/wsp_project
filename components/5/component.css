@@ -3,27 +3,13 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-
-/* BASE STYLES 
-======================================== */
-
-body {
-	font:400 normal 100%/1.5 'Source Sans Pro', sans-serif;
-	color: hsl(0, 0%, 50%)
-}
-
-.wrapper {
-	width: 100%;
-	max-width: 1000px;
-	margin: auto;
-}
-
-img { max-width:100%;}
-
-
-
 /* TYPOGRAPHY
 ======================================== */
+/* base font */
+body {
+	color: hsl(0, 0%, 50%)
+}
+/* section heading */
 h2 {
 	text-align: center;
 	text-transform: uppercase;
@@ -32,6 +18,7 @@ h2 {
 	font-weight: 900;
 	color: hsl(0, 0%, 40%);
 }
+/* create a visual divider after title */
 h2::after {
 	content: "";
 	width: 20%;
@@ -40,63 +27,59 @@ h2::after {
 	left: 40%;
 	border-bottom: 5px solid rgb(140, 207, 80);
 }
-
-
-/* LEADING TEXT
-======================================== */
-
-
+/* lead text */
 section h2 ~ p {
-	margin: 0 auto 10% auto;
-	text-align: center;
-	padding: 5%;
+	font-size: 1.5em;
 	color: hsl(0, 0%, 70%)
 }
+/* basic paragraph */
+section > p {
+	font-size: 1.2em;
+}
+/* contain size of signature image */
+section img {
+	width: 50%;
+	
+}
 
-/* COPY AND SKILLS
+/* LAYOUT + POSITIONING
 ======================================== */
-section h2 ~ p ~ div > p {
-	padding: 2% 5%;
-	margin-bottom: 2%;
+/* vertical stack content & give room to breathe */
+section ul, section > p, section h2 ~ p {
+	width: 100%;
+	padding: 5% ;
 }
-ul {
-	margin-left: 5%;
-	margin-right: 5%;
-}
+/* increase meter width */
 ul, meter {
-	width: 90%;
+	width: 100%;
 }
 
-@media (min-width: 541px) {
+
+@media (min-width: 600px) {
+	/* center the content within browser */
 	.wrapper {
+		max-width: 1000px;
 		margin: auto;
 	}
-	
-	h2 {
-		line-height: 3em;
-	}
-	
+/* adjust divider position */
 	h2::after {
 		content: "";
 		width: 10%;
 		position: absolute;
-		top: 15%;
+		top: 8%;
 		left: 45%;
 		border-bottom: 5px solid rgb(140, 207, 80);
 	}
-	
-	section h2 ~ p {
-		padding: 5% 25%;
-	}
-	
-section h2 ~ p ~ ul {
-		width: calc(100% / 12 * 5);
-		float: right;
-	}
-	
-	p ~ div {
+	/* float body paragraphs to left  */
+	p ~ section {
 		width: calc(100% / 12 * 5 );
 		float: left;
 	}
+	/* float skill bars to right  */
+	section ul {
+		width: calc(100% / 12 * 5);
+		float: right;
+	}
+
 }
 

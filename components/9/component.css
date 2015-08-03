@@ -3,103 +3,108 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* BASE STYLES 
+/* TYPOGRAPHY
 ======================================== */
-
-body {
-	width: 100%;
-	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
+/* base font */
+section {
 	color: hsl(0, 0%, 50%);
 }
-
-section::before,
-section::after {
+/* headings + cta */
+h2, h3, section input[type="button"]{
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+/* main heading */
+h2 {
+	font-size: 2em;
+	font-weight: 100;
+	color: #1d1d1d;
+}
+/* form heading */
+h3 {
+	font-size: 1.5em;
+	font-weight: 100;
+}
+p {
+	font-size: 1.125em;
+}
+@media (min-width: 700px) {
+	/* clear fix */
+	section::after {
 	content: "";
 	display: table;
 	clear: both;
 }
-
-img { width: 100%; }
-
-/* TYPOGRAPHY
-======================================== */
-h2, h3, section input[type="button"]{
-	font-family: "Source Sans Pro", sans-serif;
-	letter-spacing: .2em;
-	text-transform: uppercase;
-}
-section h2 {
-	font-size: 2em;
-	font-weight: 100;
-	color: #1d1d1d;
-	background: lightgray; 
-}
-
-section form h3 {
-	font-size: 1.5em;
-	font-weight: 100;
-}
-
-@media (min-width: 700px) {
-	section h2 {
+	/* main heading */
+	h2 {
 		font-size: 1.6em;
 	}
-	section form h3 {
+	
+	/* form heading*/
+	h3 {
 		font-size: 1.2em;
 	}	
 }
 
 /* COMPONENT SPECIFIC STYLES
 ======================================== */
+/* give content white space */
 h2, h3, form, p {
 	padding: 3% 8%;
-	
 }
+/* headings white space */
 section h2, section h3 {
 	padding: 6% 5%;
-	
 }
-section p {
-	font-size: 1.125em;
-}
+/* body copy white space */
 section > p {
 	padding-bottom: 10%;
-	background: lightgray; 
 }
 
 @media (min-width: 700px) {
-	/* section {background: lightgray;} my personal preference instead of having the smaller box like in my component photo (around the 'About' area). Cleaner and a little more modern aesthetic and a little more me*/
-	section {
-		position: relative;
-		width: 100%;
-		max-width: 960px;
-		margin: 0 auto;
-	}
-	section h2, section h3 {
-		padding: 6% 3% 2%;
-	}
+	/* adjust font-size */
 	section p {
 		font-size: 1em;
 	}
+	/* restrict size + align center */
+	section {
+		position: relative;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	/* adjust headings white soace */
+	section h2, section h3 {
+		padding: 6% 3% 2%;
+	}
+	/* adjust body copy width */
 	section > p {
-		width: 100%;
-		padding: 0 78% 5% 3%;
+		width: 35%;
 		float: left;
+	}
+	/* background for section */
+	section::before {
+		content: "";
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: lightgray;
+		z-index: -1;
 	}
 }
 
 
 /* NEWSLETTER FORM
 ======================================== */
+/* form background */
 section form {
-	width: 100%;
 	background: #1d1d1d;
 }
-
+/* form heading */
 form > h3 { color: white; }
 
+/* general form input */
 form input {
-	width: 100%;
 	background: black;
 	border:1px solid #2d2d2d;
 	margin-top:5%;
@@ -109,31 +114,38 @@ form input {
 	color: hsl(0, 0%, 50%);
 	border-radius: 5px;
 }
-form input[type="email"]:hover
-form input[type="email"]:focus {
-	background: hsla(0,0%, 30%, .9);
-	color: white;	
+/* email input field */
+form input[type="email"] {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
+/* email input field hover */
+form input[type="email"]:hover {
+	border-color: white;
+	color: white;	
+}
+/* subscribe button */
 form input[type="button"] {
 	color: white;
 	font-weight:400;
 	box-shadow: 0 1px 2px 1px #fff;
 }
+/* subscribe button hover */
 form input[type="button"]:hover  {
 	background: #4d4d4d;
 	border: 1px outset white;
 }
 
-
 @media (min-width: 700px) {
+	/* adjust img size */
 	section img {
 		max-width: 35%;
 		position: absolute;
 		top: 44%;
 		left: 29%;
 	}
-
+	/* position form */
 	form {
 		padding: 0 3% 7.6% 3%;
 		position: absolute;
@@ -141,7 +153,7 @@ form input[type="button"]:hover  {
 		top: 76%;
 		left: 55%;
 	}
-
+	/* adjust form for desktop */
 	form input {
 		width: 100%;
 		background: black;

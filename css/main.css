@@ -6,92 +6,88 @@ class: WSP 1507
 
 /* BASE STYLES
 ======================================== */
-* {
-	box-sizing: border-box;
-}
-
-body {
-	background: rgba(43, 46, 55, .3);
-	font: normal 100%/1.5 'Source Sans Pro', sans-serif;
-}
-
 img {
-	max-width: 100%;
 	margin: 0 auto;
 }
 .wrapper {
-	max-width: 1200px;
+	width: 100%;
 	margin: auto;
+	overflow: hidden;
 }
 
 /* TYPOGRAPHY
 ======================================== */
-
+/* all headings */
 h1,
 h2,
 h3,
 h4 {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Montserrat", sans-serif;
 	line-height: 1;
 	text-transform: uppercase;
 }
-
+/* primary headings */
 h1,
 h2,
 h3 {
 	font-weight: 400;
-	letter-spacing: 0.15em;
+	letter-spacing: 0.1em;
 }
-
+/* secondary headings*/
 h4,
 h5,
 h6 {
 	font-weight: 700;
 	letter-spacing: 0.10em;
 }
-
+/* header / footer / dark bg text */
 h1, footer p {
 	color: #fff;
 	text-align: center;
 }
 
 h1 {
-	font-size: 1.5em;
-	text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
-	position: relative;
+	font-size: 1.3em;
+	margin-left: 3em;
 }
+/*  divider */
 h2::after {
 	content: "";
 	display: block;
-	width: calc(100% / 12 * 3);
-	height: 1px;
+	height: 5px;
+	width: 20%;
 	margin: 20px 0;
-	border-bottom: 1px solid rgba(57, 122, 162, 0.79);
+	border-top: medium groove rgb(37, 213, 255);
 }
+/* main section heading */
 h2 {
-	font-size: 3em;
-	color: rgba(139, 139, 141, 1);
+	font-size: 2em;
+	color: rgba(0,0,0,.25);
 	padding: 1em 0 0 5%;
+/*	word-break: break-all;*/
 }
 
+/* article headings */
 h3 {
 	font-size: 2.5em;
-	font-weight: 300;
+	font-weight: 500;
 	color: rgba(139, 139, 141, .8);
 	margin-bottom: 1em;
 	padding: 1em 0;
 }
+
 h3 > span {
 	text-transform: lowercase;
 	font-size: .8em;
 }
+/* sub headings */
 h4 {
 	font-size: 1em;
 	font-weight: 300;
 	color: rgba(100, 100, 100, .6);
 	padding: 1em 0 .5em 0;
 }
-
+/* body copy */
 p {
 	margin-bottom: .5em;
 	word-spacing: 1px;
@@ -100,9 +96,18 @@ p {
 		color: rgba(105, 105, 105, 0.9);
 }
 section:first-of-type p {
-	text-align: center;
+	margin-bottom: 2rem;
 }
 
+@media (min-width: 600px) {
+	h1 {
+		text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
+		position: relative;
+	}
+	.wrapper {
+		max-width: 1200px;
+	}
+}
 /* LINKS
 ======================================== */
 a {
@@ -126,13 +131,11 @@ p ~ p > a, p ~ p > a:link, a ~ p {
 	box-shadow: 0 3px 1px rgba(0,0,0,.3);
 	border:1px ridge rgb(214, 247, 140);
 	text-align: center;
-	transition-property: all;
-	transition-duration: .5s;
+	transition-property: all .5s ease-in-out;
 }
 
 p ~ p > a, p ~ p > a:hover, p ~ p > a:active, a ~ p {
-	transition-property: all;
-	transition-duration: .5s;
+	transition-property: all .5s ease-in-out;
 	box-shadow: 0 6px 9px 1px rgba(0,0,0,.3);
 }
 
@@ -161,14 +164,13 @@ p ~ p > a, p ~ p > a:hover, p ~ p > a:active, a ~ p {
 header,
 footer {
 	width: 100%;
-	max-height: 110px;
 	background: url('../img/logo.png') no-repeat left,
 		linear-gradient(	
 			rgba(57, 122, 162, 0.79),
 			rgba(70, 143, 188, 0.89) 50%,
 			rgb(102, 168, 203) 100%);
-	border: 1px Solid rgba(0, 0, 0, 0.3);
-	padding: 3%;
+	border: 1px Solid rgb(37, 213, 255);
+	padding: 50px 5%;
 	box-shadow: 0 0 15px rgba(0,0,0,.8);
 }
 
