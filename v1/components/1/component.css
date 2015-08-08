@@ -1,0 +1,101 @@
+/* 
+================================================================================
+COMPONENT STYLESHEET
+================================================================================ */
+
+/* BASE STYLES
+----------------------- */
+/* spacing around edge for mobile*/
+section {
+	padding: 10px;
+}
+
+/* different color for utility nav*/
+section:last-child {
+	background: #efefef;
+}
+
+/* TYPOGRAPHY
+----------------------- */
+
+/* uppercase for all text */
+h1, a { text-transform: uppercase;}
+
+h1 {
+	font-size: 1.875em;
+	font-weight: 200;
+	letter-spacing: 0.2em;
+}
+
+/* spacing between each li */
+li { margin: 20px;}
+
+/* utility navigation */
+section:last-child a {
+	color: hsla(0, 0%, 10%, .4);
+	font-size: 1em;
+}
+/* all links */
+a, a:link {
+	color: dimgray;
+	font-size: 1.5em;
+	font-weight: 500;
+}
+
+a:hover, a:active { color: darkgray; }
+
+/* search input field */
+form input {
+	width: 90%;
+	padding: 10px;
+	border: 1px solid dimgray;
+	border-radius: 5px;
+	color: darkgray;
+}
+
+
+
+@media (min-width: 600px) {
+/* allow content to span across entire width */
+	section { 
+		width: 100%;
+	}
+/*	spacing for global nav from top due to utility nav position */
+	section:first-child {
+		margin-top: 100px;
+	}
+
+	section:first-child a, section:first-child li, form input {
+		font-size: .9em;
+		margin: 17px 4px;
+	}
+	
+/*	position utility nav */
+	section:last-child {
+		position: absolute;
+		top: 0;
+	}
+/*	font-size for utility nav*/
+	section:last-child a {
+		font-size: 0.75em;
+	}
+/*	constrained the width of content*/
+		.wrapper {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	/*	float for search and nav */
+	nav, form input { 
+		float: right;
+	}
+/*	float heading and list items */
+	li, h1 { 
+		float: left;
+	}
+/*	styled search input field*/
+	form input {
+		max-width: 20%;
+		padding: 5px;
+	}
+	
+}

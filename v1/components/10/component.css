@@ -1,0 +1,119 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700);
+/* 
+================================================================================
+COMPONENT STYLESHEET
+================================================================================ */
+/* link headings */
+footer h2 {
+	font:700 1.5em/1.3 'Yanone Kaffeesatz', sans-serif;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+/* links + copy */
+footer, footer a,
+footer a:link {
+	color: hsla(0, 0%, 70%, .8);
+	font-size: 1em;
+}
+/* links hover*/
+footer a:hover {
+	color: hsla(0, 0%, 100%, 1);
+	text-decoration: underline;
+}
+
+/* LAYOUT + SPACING
+======================================== */
+/* position footer */
+footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: rgb(49, 59, 69);
+	padding-bottom: 30px;
+}
+/* stack sections verticlly -mobile*/
+section {
+	width: 100%;
+	display: inline-block;
+	padding-bottom: 2%;
+	margin-bottom: 15px;
+}
+
+
+/* LINKS
+======================================== */
+/* space between headings & links*/
+H2 {
+margin-bottom: 5px;	
+}
+/* horizontal legal + copyright */
+.wrapper > ul {
+	display: inline-block;
+}
+
+footer .wrapper > ul li {
+	display: block;
+	margin-right: 20px;
+}
+
+footer .wrapper > ul li:not(:last-child)::after {
+	content: "•";
+	margin: 0 20px;
+}
+
+@media (min-width: 600px) {
+	/* clear fix */
+	section::after,
+	div:last-child {
+		content: "";
+		display: table;
+		clear: both;
+	}
+/* white space @ footer end */
+	footer {
+		padding-bottom: 30px;
+	}
+/* restricting content size + align center */
+	.wrapper {
+		max-width: 1200px;
+		margin: auto;
+	}
+/*	FOOTER LINKS 
+======================================== */
+/* sections right margin-not last 1 */
+	section:not(:last-child) {
+		margin-right: 2rem;
+	}
+/* left margin first section only */
+	section:first-child {
+		margin-left:2rem;
+	}
+/* evenly space links horizontally 
+max-width = calc( 100% width / 7 links - (8 gutters @ 2rem) / 7 col.) */
+	section {
+		margin-top: 30px;
+		float: left;
+		max-width: calc(100% / 7 - 16rem / 7 );
+
+	}
+	
+	/*	PRIVACY + ToS + COPYRIGHT 
+======================================== */
+
+/* display on own line */
+	.wrapper > ul {
+		display: block;
+	}
+	
+/* horizontal layout */
+	footer .wrapper > ul li {
+		display: inline;
+		margin-right: 20px;
+	}
+/* white space under title links  */
+	footer h2 {
+		font-size: 1em;
+		margin-bottom: 6px;
+	}
+}

@@ -1,0 +1,63 @@
+/* 
+================================================================================
+COMPONENT STYLESHEET
+================================================================================ */
+
+/* TYPOGRAPHY
+======================================== */
+/* base font */
+section {
+	font: 400 normal 100%/1.5 'Roboto', sans-serif;
+	color: hsla(0, 0%, 50%,.5);
+}
+/* section heading */
+section h2 {
+	font-size: 2em;
+	font-weight: 100;
+	text-transform: uppercase;
+	line-height: 1.5em;
+	letter-spacing: .2em;
+	color: hsl(0, 0%, 100%);
+}
+/* body copy */
+section p {
+	font-size: 1.5em;
+	color: hsla(0, 0%, 100%, .80);
+}
+
+/* background */
+section {
+	position: relative;
+	margin: auto;
+	padding: 70px;
+	max-width: 1298px;
+	text-shadow: 0 1px 0 rgba(22, 24, 29, 0.5);
+	background: linear-gradient(to bottom, rgba(0,0,0,.2)0%, rgba(50,50,50,.9)100%), midnightblue;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+@media (min-width: 685px) {
+/* constrain size to match component picture*/
+	section h2, section p {
+		max-width: 40%;
+		padding: 5px;
+	}
+/* adjust copy font-size to fit desktop viewport sizes*/
+	section p {
+		font-size: 1em;
+	}
+/* set background image to right of text to match component */
+	section h2::before {
+		content: "";
+		display: block;
+		background: url('mobile.jpg') no-repeat right;
+	background-size: cover;
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		z-index: 0;
+	}
+}	
