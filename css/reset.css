@@ -2,30 +2,15 @@
 ================================================================================
 CSS RESET
 ================================================================================ */
-html, body, div, main, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, input, textarea,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video,
-::before, ::after {
-	box-sizing: border-box;
+html, body, div, main, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, textarea, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, ::before, ::after {
 	margin: 0; 
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: "Source Sans Pro", sans-serif;
-	font: inherit;
+	font-family: "Source Sans Pro" sans-serif;
 	vertical-align: baseline;
 	text-decoration: none;
-	
+	box-sizing: border-box;	
 }
 
 /* HTML5 - Older browser support ======================================== */
@@ -36,7 +21,10 @@ footer, header, hgroup, menu, nav, section {
 
 /* BODY 
 ======================================== */
-body { line-height: 1; }
+body { 
+	line-height: 1.5; 
+	font: inherit;
+}
 
 /* LISTS - Clear bullets ======================================== */
 ol, ul { list-style: none; }
@@ -88,4 +76,8 @@ hr {
 
 input, select {
     vertical-align:middle;
+}
+
+*, *::before, *::after, html {
+	box-sizing: border-box;
 }

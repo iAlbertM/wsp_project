@@ -2,7 +2,13 @@
 ================================================================================
 WSP COMPONENT LIBRARY STYLESHEET
 ================================================================================ */
+/*
+style sheet:
 
+
+
+
+*/
 
 /* 
 WSP COMPONENT LIBRARY STYLESHEET
@@ -12,225 +18,145 @@ class: WSP 1507
 
 /* BASE STYLES
 ======================================== */
-img {
-	margin: 0 auto;
+body {
+	width: 100%;
+	height: 100%;
+	background: rgba(50, 50, 50, .1);
 }
+
 .wrapper {
 	width: 100%;
-	margin: auto;
-	overflow: hidden;
-}
-
-/* TYPOGRAPHY
-======================================== */
-/* all headings */
-h1,
-h2,
-h3,
-h4 {
-	font-family: "Montserrat", sans-serif;
-	line-height: 1;
-	text-transform: uppercase;
-}
-/* primary headings */
-h1,
-h2,
-h3 {
-	font-weight: 400;
-	letter-spacing: 0.1em;
-}
-/* secondary headings*/
-h4,
-h5,
-h6 {
-	font-weight: 700;
-	letter-spacing: 0.10em;
-}
-/* header / footer / dark bg text */
-h1, footer p {
-	color: #fff;
-	text-align: center;
-}
-
-h1 {
-	font-size: 1.3em;
-	margin-left: 3em;
-}
-/*  divider */
-h2::after {
-	content: "";
-	display: block;
-	height: 5px;
-	width: 20%;
-	margin: 20px 0;
-	border-top: medium groove rgb(37, 213, 255);
-}
-/* main section heading */
-h2 {
-	font-size: 2em;
-	color: rgba(0,0,0,.25);
-	padding: 1em 0 0 5%;
-/*	word-break: break-all;*/
-}
-
-/* article headings */
-h3 {
-	font-size: 2.5em;
-	font-weight: 500;
-	color: rgba(139, 139, 141, .8);
-	margin-bottom: 1em;
-	padding: 1em 0;
-}
-
-h3 > span {
-	text-transform: lowercase;
-	font-size: .8em;
-}
-/* sub headings */
-h4 {
-	font-size: 1em;
-	font-weight: 300;
-	color: rgba(100, 100, 100, .6);
-	padding: 1em 0 .5em 0;
-}
-/* body copy */
-p {
-	margin-bottom: .5em;
-	word-spacing: 1px;
-	letter-spacing: .01em;
-		font-size: 150%;
-		color: rgba(105, 105, 105, 0.9);
-}
-section:first-of-type p {
-	margin-bottom: 2rem;
+	overflow: none;
 }
 
 @media (min-width: 600px) {
-	h1 {
-		text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
-		position: relative;
+	body {
+		background: linear-gradient(to bottom, rgba(50, 50, 50, .1) 0%, rgba(50, 50, 50, .2) 100%);
 	}
 	.wrapper {
-		max-width: 1200px;
+		max-width: 960px;
+		margin: auto;
 	}
 }
-/* LINKS
+/* TYPOGRAPHY
 ======================================== */
-a {
-	color: inherit;
+/* all headings */
+h1, h2, h3, h4 {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: inherit;
+	color: #f59045;
 }
-a:hover {
-	color: white;
-	text-decoration: underline;
+/* logo */
+h1, h2 {
+	font-size: 2rem;
+	line-height: 6rem;
 }
+/* main section heading */
+h2 {
+	font-size: 1.5rem;
+	line-height: 4rem;
+/*	color: rgba(74, 141, 157, 0.75);*/
+	color: dimgray;
+}
+/* article headings */
+h3 {
+	color: rgb(244, 124, 22);
+	font-size: 2rem;
+}
+/* sub headings */
+h4 {
+	font-size: 1.25rem;
+	line-height: 2rem;
+}
+p {
+	font-size: 1.5rem;
+	line-height: 1.4;
+	color: dimgray;
+}
+/* body copy */
 
-/* COMPONENT LINKS
+
+/* LINKS - GENERAL
 ======================================== */
-p ~ p > a, p ~ p > a:link, a ~ p {
+
+
+
+/* LINKS - VIEW COMPONENT
+======================================== */
+p > a, p > a:link {
 	display: block;
-	max-width: 100%;
+	width: 100%;
 	text-shadow: 0 1px 0 1px rgba(250,250,250,1);
 	padding: 1em 2em;
 	margin: 40px 0;
 	background-color: rgba(216, 255, 0, 1);
 	color: rgba(35, 160, 88, 0.62);
 	box-shadow: 0 3px 1px rgba(0,0,0,.3);
-	border:1px ridge rgb(214, 247, 140);
-	text-align: center;
-	transition-property: all .5s ease-in-out;
+	border:1px ridge rgb(214, 247, 140);	
+	text-align: center;	
 }
-
-p ~ p > a, p ~ p > a:hover, p ~ p > a:active, a ~ p {
-	transition-property: all .5s ease-in-out;
-	box-shadow: 0 6px 9px 1px rgba(0,0,0,.3);
-}
-
 
 @media (min-width: 600px) {
-	section {
-		padding: 0 6% 10%;
-	}
+	p > a, p > a:link { transition: all .5s ease-in-out; }
 	
-	p ~ p > a, p ~ p > a:link, a ~ p {
-		max-width: 40%;
-		padding: 20px;
+	p > a:hover, p > a:active {
+		box-shadow: 0 6px 9px 1px rgba(0,0,0,.3);
+		transition: all .5s ease-in-out;	
 	}
 }
-
-@media (min-width: 1200px) {
-	section {
-		max-width: 1200px;
-		margin: auto;
-	}
-}
-
-
-/* HEADER
+/* HEADER + FOOTER
 ======================================== */
-header,
-footer {
-	width: 100%;
-	background: url('../img/logo.png') no-repeat left,
-		linear-gradient(	
-			rgba(57, 122, 162, 0.79),
-			rgba(70, 143, 188, 0.89) 50%,
-			rgb(102, 168, 203) 100%);
-	border: 1px Solid rgb(37, 213, 255);
-	padding: 50px 5%;
-	box-shadow: 0 0 15px rgba(0,0,0,.8);
+header, footer {
+	background: #f59045;
 }
-
-@media (min-width: 600px) {
-	header, footer {
-		max-height: 50px;
-	}
+footer p {
+	font-size: 1em;
 }
-
+header h1, footer p {
+	color: white;
+	text-align: center;
+	padding: 5px auto;
+}
 
 
 /* ABOUT
 ======================================== */
 
-section:first-of-type {
-	background: #eee;
-	color: rgba(0,0,0,.7);
-	max-width: 100%;
-}
-
-
-
-@media (min-width: 600px) {
-	section:first-of-type .wrapper img {
-		width: 30%;
-		display: block;
-		margin: 0 auto 20px;
-	}
-}
-
 
 /* COMPONENTS
 ======================================== */
-
 section {
-	max-width: 100%;
-	margin: 0 auto 90px;
+	padding: 10px 25px;
 }
 
-section article {
-	background: #fff;
-	display: block;
-	box-sizing: border-box;
-	width: 100%;
-	height:auto;
-	margin: 90px auto;
-	padding: 5px 10%;
-	box-shadow: 0 3px 15px rgba(0,0,0,.25);
-	border: outset 1px rgba(255,255,255,.5);
+article h4 {
+	margin-top: 20px;
 }
 @media (min-width: 600px) {
-	section:last-of-type img {
-		border-radius: 4px;
-		box-shadow: 0 5px 15px rgba(0,0,0,.25);
-		border:1px inset rgba(255,255,255,.5);
+	h3 {
+		line-height: 3;
 	}
-
+	
+	p { 
+		font-size: 1em;
+		padding: 20px 15%;
+		background: hsla(0, 0%, 100%, .5);
+		max-width: 100%;
+	}
+	section:first-child img {
+		max-width: 50%;
+		float: left;
+		margin-right: 5%;
+	}
+	section::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	article {
+		padding: 10px 2%;
+		margin: 50px auto;
+		background: hsla(0, 0%, 100%, .5);
+	}
+}
