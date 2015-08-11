@@ -13,7 +13,8 @@ html, body, div, main, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
 	box-sizing: border-box;	
 }
 
-/* HTML5 - Older browser support ======================================== */
+/* HTML5 - Older browser support 
+======================================== */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { 
 	display: block;
@@ -26,7 +27,8 @@ body {
 	font: inherit;
 }
 
-/* LISTS - Clear bullets ======================================== */
+/* LISTS - Clear bullets
+======================================== */
 ol, ul { list-style: none; }
 
 /* QUOTES 
@@ -48,23 +50,8 @@ img {
 	max-width: 100%;	
 }
 
-
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
-}
-
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000; 
-    font-style:italic;
-    font-weight:bold;
-}
-
-/* change border colour to suit your needs */
+/* HORIZONTAL RULE
+======================================== */
 hr {
     display:block;
     height:1px;
@@ -74,6 +61,7 @@ hr {
     padding:0;
 }
 
+/* INPUT FIELD + SELECT INPUT TYPE*/
 input, select {
     vertical-align:middle;
 }
