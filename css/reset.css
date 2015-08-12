@@ -61,11 +61,9 @@ hr {
     padding:0;
 }
 
-/* INPUT FIELD + SELECT INPUT TYPE*/
-input, select {
-    vertical-align:middle;
-}
-
 *, *::before, *::after, html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	box-sizing: border-box;
 }
