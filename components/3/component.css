@@ -2,7 +2,94 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
+/* base style */
+header {
+	background: #ff673b;
+	font-size: 1.6rem;
+	color: hsla(0, 0%, 100%, 0.55);
+}
 
-/* HEADER ======================================== */
+/* space inbetween links and window edge */
+h1, header li  {
+	padding: 1rem;
+}
 
-/* HEADER ======================================== */
+/* logotype */
+h1 {
+	font-family: 'comfortaa',sans-serif;
+	font-size: 5rem;
+	color: white;
+	font-weight: 700;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+/* links - normal state */
+header a:link {
+	color: hsla(0, 0%, 100%, 0.55);
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/* links - hover|active state */
+header a:hover, header a:active {
+	color: white;
+}
+
+/* image replacement technique - hide text */
+header > ul li:not(:last-child) a {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	padding-top: 3rem;
+	overflow: hidden;
+	border: none;
+}
+header > ul li a[href*="twitter"] {
+	background: url('twitter.png') no-repeat;
+}
+header > ul li a[href*="facebook"] {
+	background: url('facebook.png') no-repeat;
+}
+header > ul li a[href*="linkedin"] {
+	background: url('linkedin.png') no-repeat;
+}
+
+
+@media (min-width: 600px) {
+	header a:link {
+		font-size: 1.2rem;
+	}
+	header li {
+		display: inline-block;
+	}
+	header > ul li a {
+		float: left;
+		vertical-align: baseline;
+	}
+	nav {
+		float: left;
+	}
+	header > ul {
+		float: right;
+	}
+	header h1 {
+		position: absolute;
+		left: 48%;
+		font-size: 3rem;
+	}
+	header::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	header > ul li a[href*="twitter"] {
+	background-size: 75%;
+}
+header > ul li a[href*="facebook"] {
+	background-size: 75%;
+}
+header > ul li a[href*="linkedin"] {
+	background-size: 75%;
+}
+}

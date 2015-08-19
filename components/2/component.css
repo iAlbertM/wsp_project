@@ -2,7 +2,133 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
+/* base */
 
-/* HEADER ======================================== */
+section {
+	background: rgb(255, 103, 59);
+	padding: 2rem;
+	text-align: center;
+	color: hsla(0, 0%, 100%, .60);
+	position: relative;
+	font-size:1rem;
+}
 
-/* HEADER ======================================== */
+
+/*  center & shape profile img */
+section img {
+	display: block;
+	border-radius: 100%;
+	margin: 3rem auto;
+	width: 50%;
+}
+
+/* user name */
+section h2 {
+	font-size: 3rem;
+	font-weight: 700;
+	line-height: 2;
+	text-transform: uppercase;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* subheading */
+section h3 {
+	font-size: 1.6rem;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* content spacing */
+section Li {
+	display: block;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+	letter-spacing: .1rem;
+}
+
+/* show public stats horizontally */
+section li[title] {
+	display: inline-block;
+	padding: .5rem;
+	margin: 5rem 2rem;
+}
+
+/* public stats - data emphasis*/
+section li strong {
+	display: block;
+	font-size: 3rem;
+	color: white;
+}
+
+/* edit profile link */
+section a, section a {
+	display: inherit;
+	color: white;
+	text-transform: capitalize;
+	padding: 1rem 10%;
+	border-radius: 2rem;
+	border: 1px solid white;
+	margin: 5rem;
+}
+/* add space between link and bottom edge*/
+section li:nth-child(2n+5)::before {
+	content:"";
+	display: block;
+	padding: 0 10%;
+	margin-bottom: 40rem;
+}
+
+/* image replacement technique - hide text */
+section li > button {
+	width: 3.2rem;
+	height: 3.2rem;
+	display: block;
+	padding-top: 3.2rem;
+	overflow: hidden;
+	border: none;
+}
+
+/* image replacement technique - show image */
+section li > button[value="collapse"] {
+	float: left;
+	background: url("collapse.png") no-repeat center;
+}
+
+section li > button[value="logout"] {
+	float: right;
+	background: url("logout.png") no-repeat center;
+}
+
+/* clear fix */
+section ul::after {
+	content:"";
+	display: table;
+	clear: both; 
+}
+
+@media (min-width: 600px) {
+	section {
+		display: block;
+		max-width: 35.5rem;
+		margin: auto;
+	}
+	
+	section img {
+		max-width: 35%;
+		margin: 5rem auto;
+	}
+	
+	section li[title] {
+		margin-top: 10rem;
+		margin-bottom: 10rem;
+	}
+	section li:nth-child(2n+5)::before {
+		margin-bottom: 15rem;
+	}
+}
+
+
+
+
+
+

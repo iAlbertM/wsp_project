@@ -14,18 +14,23 @@ class: WSP 1507
 /* BASE STYLES
 ---------------------------------------- */
 body {
-	background: url('../img/pattern-overlay.png') repeat, rgba(255, 253, 250, 0.72);
-	font: 400 normal 100%/1.5;
-	
+	background: 
+		url('../img/pattern-overlay.png') repeat,
+		rgba(255, 253, 250, 0.72);
+	font: 400 normal 100%/1.5 'Source Sans Pro', sans-serif;
 }
 
-/* give main sections some seperation */
+/* whitespace between main sections */
 main > section {
 	margin: 100px auto;
 }
 
 /* ----------------------------------------
+
+
 DESKTOP STYLES 
+
+
 ---------------------------------------- */
 @media (min-width: 600px) {
 	main > section:last-child {
@@ -60,23 +65,23 @@ h1, h2, h3, h4 {
 }
 /* logo */
 h1 {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	line-height: 2.5;
 }
 /* main section heading */
 h2 {
-	font-size: 2.75rem;
+	font-size: 2.5rem; /* 40px */
 	line-height: 1.5;
 	color: #444;
 }
 /* article headings */
 h3 {
+	font-size: 1.5rem; /* 32px */
 	color: #FF4838;
-	font-size: 2rem;
 }
 /* sub headings */
 h4 {
-	font-size: 1.25rem;
+	font-size: 1.5rem; /* 24px */
 	line-height: 2;
 }
 /* body copy */
@@ -88,7 +93,17 @@ p {
 
 
 
+/* ----------------------------------------
 
+
+DESKTOP STYLES 
+
+
+---------------------------------------- */
+@media (min-width: 600px) {
+
+	
+}
 
 
 
@@ -114,7 +129,7 @@ p > a, p > a:link {
 	font-size: 1.5rem;
 	font-weight: 900;
 	margin: 40px 0;
-	padding: 1em 2em;
+	padding: 16px 2rem;
 	text-align: center;	
 	text-shadow: 0px 0px 2px hsla(0, 0%, 100%, 1);
 	width: 100%;

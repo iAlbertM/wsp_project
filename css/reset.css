@@ -2,15 +2,28 @@
 ================================================================================
 CSS RESET
 ================================================================================ */
-html, body, div, main, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, textarea, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, ::before, ::after {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, ::before, ::after {
+	font: inherit;
 	margin: 0; 
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: "Source Sans Pro" sans-serif;
+	font-family: "Source Sans Pro", Arial, Helvetica,  sans-serif;
 	vertical-align: baseline;
 	text-decoration: none;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 }
 
 /* HTML5 - Older browser support 
@@ -20,22 +33,31 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-/* BODY 
+
+/* Bold
 ======================================== */
-body { 
-	line-height: 1.5; 
-	font: inherit;
+b, strong {
+	font-weight: bold;
 }
+
+
+/* BASE FONT
+======================================== */
+html { font-size: 62.5%; }
+body { font: normal 1em/1.5; }
+
 
 /* LISTS - Clear bullets
 ======================================== */
 ol, ul { list-style: none; }
+
 
 /* QUOTES 
 ======================================== */
 blockquote, q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 q::before, blockquote::before { content: open-quote; }
 q::after, blockquote::after { content: close-quote; }
+
 
 /* TABLES 
 ======================================== */
@@ -44,10 +66,17 @@ table {
 	border-spacing: 0;
 }
 
-/* IMAGES 
+
+/* TEXTAREA - restrict resize to vertical only
+======================================== */
+textarea { resize: vertical; }
+
+
+/* IMAGES - remove gap beteen img and container bttm
 ======================================== */
 img {
 	max-width: 100%;	
+	vertical-align: middle;
 }
 
 /* HORIZONTAL RULE
@@ -55,15 +84,13 @@ img {
 hr {
     display:block;
     height:1px;
-    border:0;   
-    border-top:1px solid #cccccc;
-    margin:1em 0;
+    border-top:1px solid #ccc;
+    margin:1.6rem auto;
     padding:0;
 }
 
 *, *::before, *::after, html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	box-sizing: border-box;
 }
