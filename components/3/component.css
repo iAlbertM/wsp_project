@@ -7,6 +7,8 @@ header {
 	background: #ff673b;
 	font-size: 1.6rem;
 	color: hsla(0, 0%, 100%, 0.55);
+	text-align: center;
+	padding: 1rem 0;
 }
 
 /* space inbetween links and window edge */
@@ -24,11 +26,12 @@ h1 {
 }
 
 /* links - normal state */
-header a:link {
+header a, header a:link {
 	color: hsla(0, 0%, 100%, 0.55);
 	font-size: 1.8rem;
 	text-transform: uppercase;
 	font-weight: 600;
+	transition: all .25s ease-in-out;
 }
 
 /* links - hover|active state */
@@ -39,57 +42,113 @@ header a:hover, header a:active {
 /* image replacement technique - hide text */
 header > ul li:not(:last-child) a {
 	display: block;
+	text-align: center;
 	width: 3rem;
-	height: 3rem;
+	height: 2.4rem;
 	padding-top: 3rem;
 	overflow: hidden;
 	border: none;
 }
-header > ul li a[href*="twitter"] {
+header span {
+	display: none;
+}
+header > ul li:not(:last-child){
+	display: inline-block;
+}
+header a[href*="twitter"], 
+header a[href*="facebook"],
+header a[href*="linkedin"] {
+	opacity: 0.5;
+	float: left;
+}
+/* hover + active states */
+header a[href*="twitter"]:hover, 
+header a[href*="facebook"]:hover,
+header a[href*="linkedin"]:hover {
+	opacity: 1;
+}
+/* image replacement for social links - normal */
+header a[href*="twitter"] {
 	background: url('twitter.png') no-repeat;
 }
-header > ul li a[href*="facebook"] {
+header a[href*="facebook"] {
 	background: url('facebook.png') no-repeat;
 }
-header > ul li a[href*="linkedin"] {
+header a[href*="linkedin"] {
 	background: url('linkedin.png') no-repeat;
 }
 
 
+
+
+
+
 @media (min-width: 600px) {
-	header a:link {
-		font-size: 1.2rem;
+	/* social stats */
+	header span {
+		display: inline;
+		font-size: 1.3rem
 	}
-	header li {
-		display: inline-block;
+	header > ul {
+		
 	}
-	header > ul li a {
+	/* social stats */
+	h1 {
+		padding: 0;
+		font-size: 4rem;
+		position: absolute;
+		left: 45%;
+	}
+	/* style and position header links */
+	header a, header a:link {
+		font-size: 1rem;
+		padding-top: 1rem;
+	}
+	/* position of header list items */
+	nav li, header > ul li {
 		float: left;
-		vertical-align: baseline;
 	}
+	/* position ul + download link */
+	header > ul, header a[title*="Download"] {
+		float: right;
+	}
+	
+}
+
+
+@media (min-width: 800px) {
+	header {
+		padding: 1rem 2rem 0 
+	}
+	/* divide elements into 3 parts where 1part will remain empty for logo's white space */
+	header > ul {
+		float: right;
+	}
+	/* align nav to left side of header*/
 	nav {
 		float: left;
 	}
 	header > ul {
+		display: block;
 		float: right;
 	}
-	header h1 {
-		position: absolute;
-		left: 48%;
-		font-size: 3rem;
+	/* align elements to right in header */
+	header > ul li:last-child{
+		float: right;
 	}
-	header::after {
-		content: "";
-		display: block;
-		clear: both;
+	/* adjust social icon size */
+	header a[href*="twitter"], header a[href*="facebook"], header a[href*="linkedin"] {
+		background-size: 50%;
+		float: left;
 	}
-	header > ul li a[href*="twitter"] {
-	background-size: 75%;
+	header span {
+		padding-top: .5rem;
+	}
+		
 }
-header > ul li a[href*="facebook"] {
-	background-size: 75%;
-}
-header > ul li a[href*="linkedin"] {
-	background-size: 75%;
-}
+/* clear fix */
+header::after, header ul::after, header ul::before {
+	content: "";
+	display: block;
+	clear: both;
 }
