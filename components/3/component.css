@@ -2,27 +2,20 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
-/* base style */
+/* vertical stack */
 header {
-	background: #ff673b;
-	font-size: 1.6rem;
-	color: hsla(0, 0%, 100%, 0.55);
 	text-align: center;
-	padding: 1rem 0;
-}
-
-/* space inbetween links and window edge */
-h1, header li  {
+	background: #ff673b;
 	padding: 1rem;
 }
 
+header li, h1 {
+	padding: 1rem;
+	text-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
 /* logotype */
 h1 {
-	font-family: 'comfortaa',sans-serif;
-	font-size: 5rem;
-	color: white;
-	font-weight: 700;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+	font: 900 normal 5rem/1.5 'comfortaa',sans-serif;
 }
 
 /* links - normal state */
@@ -30,18 +23,19 @@ header a, header a:link {
 	color: hsla(0, 0%, 100%, 0.55);
 	font-size: 1.8rem;
 	text-transform: uppercase;
-	font-weight: 600;
-	transition: all .25s ease-in-out;
 }
 
 /* links - hover|active state */
-header a:hover, header a:active {
+header a:hover, header a:active, h1 {
 	color: white;
+}
+
+header > ul li:not(:last-child) {
+	display: inline-block;
 }
 
 /* image replacement technique - hide text */
 header > ul li:not(:last-child) a {
-	display: block;
 	text-align: center;
 	width: 3rem;
 	height: 2.4rem;
@@ -51,9 +45,7 @@ header > ul li:not(:last-child) a {
 }
 header span {
 	display: none;
-}
-header > ul li:not(:last-child){
-	display: inline-block;
+	color: hsla(0, 0%, 100%, 0.55);
 }
 header a[href*="twitter"], 
 header a[href*="facebook"],
@@ -84,28 +76,29 @@ header a[href*="linkedin"] {
 
 
 @media (min-width: 600px) {
-	/* social stats */
-	header span {
-		display: inline;
-		font-size: 1.3rem
+	header {
+		padding: 1rem 2rem 0 
 	}
-	header > ul {
-		
-	}
-	/* social stats */
+	/* logo */
 	h1 {
 		padding: 0;
 		font-size: 4rem;
 		position: absolute;
 		left: 45%;
 	}
+	/* social stats */
+	header span {
+		display: inline;
+		font-size: 1.3rem
+	}
+	
 	/* style and position header links */
 	header a, header a:link {
-		font-size: 1rem;
-		padding-top: 1rem;
+		font-size: 1.6rem;
+/*		transition: all .25s ease-in-out;*/
 	}
 	/* position of header list items */
-	nav li, header > ul li {
+	nav, nav li, header > ul li {
 		float: left;
 	}
 	/* position ul + download link */
@@ -113,20 +106,6 @@ header a[href*="linkedin"] {
 		float: right;
 	}
 	
-}
-
-
-@media (min-width: 800px) {
-	header a, header a:link {
-		font-size: 1.6rem;
-	}
-	header {
-		padding: 1rem 2rem 0 
-	}
-	/* align nav to left side of header*/
-	nav {
-		float: left;
-	}
 
 	header span {
 		padding-top: .5rem;
