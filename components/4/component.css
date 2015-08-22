@@ -3,6 +3,131 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
 
-/* HEADER ======================================== */
+/* SECTION 
+======================================== */
+
+section {
+	background: rgba(10, 0, 30, 0.7) url("bg.jpg") center/cover no-repeat;
+	padding: 10rem 1rem;
+	position: relative;
+}
+
+/* TYPOGRAPHY
+======================================== */
+/* basee typography - mobile */
+p, li,a, a:link,h2 {
+	color: hsla(0, 0%, 100%, .6);
+	text-align: center;
+	text-transform: uppercase;
+	word-spacing: .15em;
+	font-size: 1.6rem;
+} 
+
+/* lead text */
+section p:first-child {
+	font-size: 1.2rem;
+	color: hsla(0, 0%, 100%, .5);
+}
+
+/* main heading */
+section h2 {
+	font-size: 5rem;
+	font-weight: 100;
+	line-height: 1.5;
+	letter-spacing: .26em;
+	color: white;
+	text-shadow: 0 0 .5rem rgb(88, 4, 255);
+}
+
+/* normal text */
+p { letter-spacing: .4rem; }
+
+/* IR */
+section h1 {
+	margin: 2rem auto;
+	border: none;	
+	/* hide text */
+	display: block;
+	width: 20rem;
+	height: 1rem;
+	padding-top: 5rem;
+	overflow: hidden;
+
+	/* image replacement */	
+	background: url(logo.png) no-repeat center;
+	background-size: 40%;
+}
+
+
+
+
+/* LINK + DESIGN ELEMENT
+======================================== */
+/* cta link */
+section li > a {
+	padding: 3rem 4rem;
+	display: block;
+	margin: 5rem auto;
+	width: 90%;
+	background: rgb(230, 51, 97);
+	border-radius:10rem;
+	position: relative;
+}
+/* more details icon thing at bottom */
+section li a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 13rem;
+	left: 40%;
+	background: url("arrow.png") no-repeat center 50%;
+	background-color: white;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 10rem;
+}
+
+@media (min-width: 800px) {
+	section {
+		margin: auto;
+		padding-top: 4rem;
+	}
+	/* lead text */
+	section p:first-child {
+		margin: 0 auto 8rem auto;
+	}
+	section h2 {
+		font-size: 3rem;
+		letter-spacing: 0.4rem;
+		word-spacing: 0.2rem;
+		font-weight: 500;
+		margin-bottom: 2rem;
+		margin-top: 4rem;
+	}
+	p {
+		letter-spacing: normal;
+	}
+	p:last-of-type {
+		font-style:italic;
+		text-transform: none;
+	}
+	section li a {
+		max-width: 30rem;
+		padding: 1.4rem 1rem;
+		font-size: 1rem;
+		position: relative;	
+	}
+		section li a::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 10rem;
+		left: 40%;
+		background: url("arrow.png") no-repeat center 50%;
+		background-color: white;
+		width: 5rem;
+		height: 5rem;
+		border-radius: 10rem;
+	}
+}
