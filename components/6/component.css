@@ -3,6 +3,205 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
+/* SECTION ======================================== */
+body {
+	font: normal 1em/1.5 'Source Sans Pro', arial, sans-serif;
+}
+h2, h3, p, a, a:link {
+	color: white;
+	font-family: "jockey-one", sans-serif;
+}
+h2, h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 1rem;
+	line-height: 2;
+	font-weight: 600;
+}
+h3 {
+	font-size: 8rem;
+	line-height: 1.2;
+	text-decoration: underline;
+	font-weight: 600;
+}
+p {
+	display: none;
+}
 
-/* HEADER ======================================== */
+/* ARTICLE ======================================== */
+article {
+	height: 40rem;
+	margin: auto;
+	padding: 2rem 1.5rem;
+}
+/* panel 1 background-image + position */
+article[title="stellar"] {
+	background: linear-gradient(to top, 
+		rgba(0, 0, 0, 0.1) 0%,
+		rgba(0, 0, 0, 0.2) 45%,
+		rgba(0,0,0, 1) 75%),
+		url('1.jpg') no-repeat center center;
+	background-size: cover;
+}
+/* panel 2 background-image + position */
+article[title="natives"] {
+	background: linear-gradient(to top, 
+		rgba(0, 0, 0, 0.1) 0%,
+		rgba(0, 0, 0, 0.2) 45%,
+		rgba(0,0,0,.75) 90%),
+		url('2.jpg') no-repeat center center;
+	background-size: cover;
+}
+/* panel 3 background-image + position */
+article[title="sharks"] {
+	background: linear-gradient(to top, 
+		rgba(0, 0, 0, 0.1) 0%,
+		rgba(0, 0, 0, 0.2) 45%,
+		rgba(0,0,0,.75) 90%),
+		url('3.jpg') no-repeat center center;
+	background-size: cover;
+}
+/* article tag */
+article h2 {
+	width: 40%;
+	margin: auto;
+}
+/* article tag bg-color*/
+article[title="stellar"] h2 {
+	background: #5558a1;
+}
+article[title="natives"] h2 {
+	background: #55a18d;
+}
+article[title="sharks"] h2 {
+	background: #c49854;
+}
+
+
+/* TABLET  ======================================== */
+@media (min-width: 600px) {
+/*	background's gradient */
+	article {
+		height: 50rem;
+		background-color: linear-gradient(to bottom, 
+			rgba(0, 0, 0, 0.1) 0%,
+			rgba(0, 0, 0, 0.2) 45%,
+			rgba(0,0,0,.85) 90%);
+	}
+/*	article background image positioning */
+	article[title="stellar"] {
+		top: 0;
+	}
+	article[title="natives"] {
+		top: 50rem;
+	}
+	article[title="sharks"] {
+		top: 100rem;
+	}
+}
+
+/* DESKTOP ======================================== */
+@media (min-width: 1000px) {
+	article {
+		width: calc(100% / 3);
+		min-height: 100%;
+		position: absolute;
+	}
+	/* panel 1 background-image + position */
+	article[title="stellar"] {
+		background: linear-gradient(to bottom, 
+			rgba(0, 0, 0, 0.1) 0%,
+			rgba(0, 0, 0, 0.2) 45%,
+			rgba(0,0,0, 1) 75%),
+			url('1.jpg') no-repeat center center;
+		background-size: cover;
+	}
+	/* panel 2 background-image + position */
+	article[title="natives"] {
+		background: linear-gradient(to bottom, 
+			rgba(0, 0, 0, 0.1) 0%,
+			rgba(0, 0, 0, 0.2) 45%,
+			rgba(0,0,0,.75) 90%),
+			url('2.jpg') no-repeat center center;
+		background-size: cover;
+	}
+	/* panel 3 background-image + position */
+	article[title="sharks"] {
+		background: linear-gradient(to bottom, 
+			rgba(0, 0, 0, 0.1) 0%,
+			rgba(0, 0, 0, 0.2) 45%,
+			rgba(0,0,0,.75) 90%),
+			url('3.jpg') no-repeat center center;
+		background-size: cover;
+}
+	/*	article background image positioning */
+	article[title="stellar"] {
+		top: 0;
+		left: 0:
+	}
+	article[title="natives"] {
+		top: 0;
+		left: calc(100% / 3);
+	}
+	article[title="sharks"] {
+		top: 0;
+		left: calc(100% / 3 * 2);
+	}
+	article h2, article h3, article p {
+		display: inline-block;
+		text-align: right;
+	}
+	article[title="stellar"] h2 {
+		width: 32%;
+	}
+	article[title="natives"] h2 {
+		width: 44%;
+	}
+	article[title="sharks"] h2 {
+		width: 23%;
+	}
+	article h2 {
+		font-size: 1.5rem;
+		letter-spacing: .2rem;
+		padding: 0 2rem;
+		margin: 60rem 0 0 auto;
+		float: right;
+	}
+	h3::before, footer::before {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	article h3 {
+		font-size: 10rem;
+		text-decoration: none;
+		display: block;
+	}
+	article p {
+		display: block;
+		font-size: 3rem;
+		color: rgba(200, 200, 200, .8);
+		line-height: 2;
+		text-align: right;
+		max-width: 60%;
+		float: right;
+	}
+	footer {
+		margin-top: 5rem;
+	}
+	footer img {
+		border-radius: 10rem;
+		margin: 1rem 1rem;
+		float: right;
+	}
+	footer a, footer a:link {
+		font-family: "Source Sans Pro", sans-serif;
+		font-weight: 100;
+		font-size: 1.4rem;
+		padding-top: 1rem;
+		float: right; 
+	}
+	
+}

@@ -3,6 +3,207 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
+/* TYPOGRAPHY ======================================== */
+body {
+	font: normal 1em/1.5 'Source Sans Pro', arial, helvetica, sans-serif;
+	background: rgb(238, 243, 245);
+}
+body > section {
+	padding: 1rem;
+	margin: auto;
+}
+a, a:link {
+	color: rgba(146, 150, 157, 0.56);
+}
+a:hover, a:active, a.active {
+	color: rgb(146, 150, 157);
+}
 
-/* HEADER ======================================== */
+/* HEADER 
+================================*/
+header {
+	margin: auto;
+	text-align: center;
+}
+header::after {
+	content: "";
+	display: block;
+	width: 25%;
+	height: .1rem;
+	margin: 2rem auto;
+	background-color:rgb(27, 123, 162) ;
+}
+h2 {
+	color: rgb(146, 150, 157);
+	font-size: 4rem;
+	font-weight: 100;
+	line-height: 2;
+	letter-spacing: .2rem;
+	text-transform: uppercase;
+}
+/* align items horizontally */
+header li, article li {
+	display: inline-block;
+	text-align: center;
+}
+/* space items evenly */
+header li:not(:last-child), article li:not(:last-child) {
+	margin-right: 1.2rem;
+}
+
+header a, header a:link {
+	font-size: 2rem;	
+}
+
+@media (min-width: 600px) {
+	section {
+		width: 100%;
+		max-width: 1000px;
+	}
+
+	header {
+		text-align: left;
+	}
+	header::after {
+		display: none;
+	}
+	header a, header a:link {
+		font-size: 1.6rem;
+	}
+}
+
+
+
+/* ARTICLE
+================================*/
+article {
+	margin: 2rem auto;
+	width: 100%;
+	overflow: hidden;
+	padding: 1rem;
+}
+article img  {
+	margin: auto;
+}
+article ul {
+	margin-top: -3rem;
+	padding: .1rem 1rem;
+	background: rgb(252, 252, 252);
+	max-width: 37rem;
+}
+
+/* IR */
+article li a {
+	display: inline-block;
+	width:1.6rem;
+	height:1.6rem;
+	text-indent: -99.99rem;
+	vertical-align: text-bottom;
+	overflow: hidden;
+	border: none;
+	margin-top: 1rem;
+	margin-right: .2rem;
+	opacity: 0.5;
+}
+article li > a[title*="Views"] {
+	background: url("iviews.png") no-repeat center center;
+	background-size: 70%;
+}
+article li > a[title*="comments"] {
+	background: url("icomments.png") no-repeat center center;
+	background-size: 70%;
+}
+article li > a[title*="likes"] {
+	background: url("ilikes.png") no-repeat center center;
+	background-size: 70%;
+}
+article li span {
+	font-size: 1.6rem;
+}
+@media (min-width: 60rem) {
+
+	section > section {
+		margin: auto;
+		padding-left: 1.5rem; /* balance article margin below */
+	}
+		/* space evenly into 4col 3row grid */
+	article {
+		margin: 0 1.5rem 1.5rem 0;
+		float: left;
+		width: calc(100% / 2 - 3rem / 2);
+		max-width: 37rem;
+	}
+	article ul {
+		margin-top: -2.5rem;
+	}
+	article li span {
+		font-size: 1.2rem;
+		color: rgba(146, 150, 157, 0.5);
+		vertical-align: bottom;
+	}
+}
+
+@media (min-width: 80rem) {
+	article {
+		width: calc(100% / 3 - 3rem / 2);
+	}
+}
+
+@media (min-width: 100rem) {
+	article {
+		width: calc(100% / 4 - 3rem / 2);
+	}
+}
+
+
+/* FOOTER
+================================*/
+footer {
+	margin-top: .5rem;
+}
+footer img {
+	border-radius: 2rem;
+	margin-right: .5rem;
+}
+footer h3 {
+	font-size: 2rem;
+	display: inline-block;
+}
+footer p {
+	margin-left: 3.4rem;
+}
+footer a, footer a:link {
+	font-size: 1.6rem;
+	color: #18abdd;
+}
+
+@media (min-width: 60rem) {
+	footer {
+		margin-top: .5rem;
+	}
+	footer img {
+		float: left;
+		width:2rem;
+	}
+	footer h3 {
+		font-size: 1.4rem;
+		font-weight: 600;
+		line-height: 1;
+	}
+	footer p, footer a, footer a:link {
+		font-size: 1.2rem;
+		line-height: 1;
+		margin-left: 0;
+	}
+}
+@media (min-width: 80rem) {
+	footer h3 {
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+	footer p, footer a, footer a:link {
+		font-size: 1rem;
+		letter-spacing: .1rem;
+	}
+}
+

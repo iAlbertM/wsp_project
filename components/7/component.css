@@ -2,7 +2,23 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
-
-/* HEADER ======================================== */
-
-/* HEADER ======================================== */
+bpdy {
+	background: rgb(18, 19, 20);
+}
+section {
+	background: linear-gradient(to bottom, rgba(18, 19, 20, .9) 0%, rgba(18, 19, 20,.9) 100%),  url('bg.jpg') no-repeat center center;
+}
+blockquote {
+	padding: 2rem 4rem;
+	font-size: 4rem;
+	color: rgba(255, 255, 255, 0.73);
+	font-style: italic;
+}
+h2 {
+	font-size: 1.6resam;
+	color: rgba(255, 255, 255, 0.69);
+	text-transform: uppercase;
+}
+p {
+	font-size: 1kkslk
+}
