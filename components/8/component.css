@@ -3,6 +3,159 @@
 COMPONENT STYLESHEET
 ================================================================================ */
 
-/* HEADER ======================================== */
+/* HEADER ====================================== */
+html { font-size: 62.5%; }
+body {
+	font: normal 1em/1.5 "Source Sans Pro", sans-serif;
+}
+section {
+	margin: auto;
+}
+article {
+	width: 100%;
+	margin-bottom: 4rem;
+	padding: .5rem 1rem;
+	box-shadow: 0 0 1rem .5rem #eee;
+}
 
-/* HEADER ======================================== */
+h2, img + p, p, a, a:link {
+	text-transform: uppercase;
+	text-align: center;
+}
+h2 {
+	font-weight: 100;
+	font-size: 3rem;
+	line-height: 2;
+}
+img {
+	width: 100%;
+	margin: 0 auto 2rem;
+}
+/* description */
+p {
+	font-size: 1.6rem;
+	width: 70%;
+	margin: auto;
+	font-weight: 500;
+	color: rgb(154, 155, 156);
+	text-transform: inherit;
+}
+/* price */
+img + p {
+	font-size: 4rem;
+	font-weight: 600;
+	text-shadow: 0 .1rem .1rem #ccc;
+}
+/* superscript */
+sup {
+	font-family: "roboto condensed", sans-serif;
+
+}
+/* price line design element */
+img + p::after {
+	content: "";
+	display: block;
+	height: .3rem;
+	margin: 1rem auto 3rem auto;
+}
+/* more link */
+p a, p a:link {
+	display: block;
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 2rem;
+	margin-bottom: 2rem;
+	text-shadow: 0 .1rem .1rem #ccc;
+}
+
+
+/* DESTINATION 1 COLOR */
+article:first-of-type h2, 
+article:first-of-type img + p, article:first-of-type p a,
+article:first-of-type p a:link {
+	color: rgb(108, 177, 250);
+}
+article:first-of-type img + p::after {
+	background: rgb(108, 177, 250);
+}
+
+/* DESTINATION 2 COLOR */
+article:nth-of-type(2) h2, 
+article:nth-of-type(2) img + p, article:nth-of-type(2) p a,
+article:nth-of-type(2) p a:link {
+	color: rgb(166, 195, 72);
+}
+article:nth-of-type(2) img + p::after {
+	background: rgb(166, 195, 72);
+}
+
+/* DESTINATION 3 COLOR */
+article:nth-of-type(3) h2, 
+article:nth-of-type(3) img + p, article:nth-of-type(3) p a,
+article:nth-of-type(3) p a:link {
+	color: rgb(230, 183, 83);
+}
+article:nth-of-type(3) img + p::after {
+	background: rgb(230, 183, 83);
+}
+
+/* DESTINATION 4 COLOR */
+article:nth-of-type(4) h2, 
+article:nth-of-type(4) img + p, article:nth-of-type(4) p a,
+article:nth-of-type(4) p a:link {
+	color: rgb(235, 99, 56);
+}
+article:nth-of-type(4) img + p::after {
+	background: rgb(235, 99, 56);
+}
+
+@media (min-width: 700px) {
+	section {
+		max-width:120rem;
+	}
+	article {
+		float: left;
+		margin-right: 2rem;
+		width: calc(100%/4 - 10rem/4);
+	}
+	article::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	article:first-of-type {
+		margin-left: 2rem;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	img + p {
+		font-size: 3rem;
+		width: 80%;
+	}
+	p a, p a:link {
+		font-size: 1.8rem;
+		margin-bottom: 0;
+	}
+	article:nth-of-type(1) p a:hover,
+	article:nth-of-type(1) p a:active {
+		color: rgb(155, 200, 247);
+	}
+	article:nth-of-type(2) p a:hover,
+	article:nth-of-type(2) p a:active {
+		color: rgb(209, 232, 133);
+	}
+	article:nth-of-type(3) p a:hover,
+	article:nth-of-type(3) p a:active {
+		color: rgb(252, 215, 136);
+	}
+	article:nth-of-type(4) p a:hover,
+	article:nth-of-type(4) p a:active {
+		color: rgb(252, 164, 136);
+	}
+}
+@media (min-width: 900px) {
+	img + p {
+		font-size: 4rem;
+	}
+}
