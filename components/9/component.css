@@ -1,8 +1,105 @@
-/* 
-================================================================================
-COMPONENT STYLESHEET
-================================================================================ */
+body {
+	font: normal 1.6em/1.5 'roboto condensed', sans-serif;
+}
 
-/* HEADER ======================================== */
+section {
+	background: url('bg2.jpg') center center no-repeat;
+	background-size: cover;
+	min-height: 100%;
+}
 
-/* HEADER ======================================== */
+form {
+	padding: 8rem 1rem;
+	margin: auto;
+}
+
+h2,
+p,
+input,
+label {
+	text-align: center;
+}
+
+h2 {
+	color: hsla(0, 0%, 100%, 0.8);
+	font-size: 4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.4rem;
+	margin-bottom: 4rem;
+}
+/* form 1st paragraph element */
+
+p:first-of-type {
+	background: linear-gradient(to right, rgba(149, 149, 149, 0.5) 4.6rem, rgba(149, 149, 149, 0.3) 4.6rem, rgba(149, 149, 149, 0.3)100%);
+	border-radius: .1rem;
+	box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.1), 0 0 100px 1px rgba(255, 255, 255, 0.1) inset;
+	position: relative;
+}
+/* email icon */
+
+p:first-of-type::after {
+	content: "";
+	background: url('email.png') center center no-repeat;
+	background-size: 100%;
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: 2rem;
+	right: 1rem;
+}
+
+label,
+input[type="email"],
+input[type="submit"] {
+	font-size: 1.4rem;
+	color: hsla(0, 0%, 100%, 0.9);
+}
+
+label {
+	font-weight: 100;
+	position: absolute;
+	top: 2rem;
+	left: .8rem;
+	font-family: 'roboto condensed', sans-serif;
+}
+
+input[type="email"],
+input[type="submit"] {
+	background: transparent;
+	color: hsla(0, 0%, 100%, 1);
+	padding: 2rem 2rem 2rem 3rem;
+	width: 90%;
+}
+
+input[type="email"] {
+	text-align: left;
+	border: none;
+}
+
+input[type="submit"] {
+	background: transparent;
+	width: 100%;
+	border: hsla(0, 0%, 100%, 0.5) solid 1px;
+	text-transform: uppercase;
+	margin-top: 4rem;
+}
+
+@media (min-width: 700px) {
+	form {
+		width: 90%;
+		max-width: 960px;
+		padding: 10rem 0;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	form p:not(:last-of-type) {
+		display: inline-block;
+		margin-right: 4rem;
+		width: 75%;
+	}
+	form p:last-of-type {
+		display: inline-block;
+		width: 20%;
+	}
+}

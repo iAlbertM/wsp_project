@@ -1,0 +1,48 @@
+$primary: rgb(85, 76, 96);
+$bg: rgb(254, 255, 255);
+
+$m-h2: 4rem;
+$d-h2: $m-h2 - 1;
+
+$v-l-padding: 4rem;
+$v-m-padding: $v-l-padding / 2;
+$v-s-padding: 1.5rem;
+
+$base: normal 1.6em/1.5 'Source Sans Pro', sans-serif;
+
+$width: 100%;
+$half: $width / 2;
+$third: $width / 3;
+$fourth: $width / 4;
+
+$m: 2rem;
+body {
+	font: $base;
+}
+footer {
+	width:$width;
+	position: fixed;
+	bottom: 0;
+	background: $bg;
+	padding-bottom: $v-l-padding;
+	h2 {
+	font-family:'vidaloka', sans-serif;
+	color: $primary;
+	text-transform: uppercase;
+	word-spacing: .5rem;
+	letter-spacing: .2rem;
+	margin-bottom: $v-s-padding;
+	}
+	a, a:link {
+		color: $primary;
+	}
+	a:hover { 
+		color: lighten($primary, 10%);
+	}
+}
+	section {
+		width: $width;
+		display: block;
+		padding: $v-s-padding 0 $v-m-padding;
+		margin-bottom: $m;	
+	}

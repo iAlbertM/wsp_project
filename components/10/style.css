@@ -1,0 +1,26 @@
+body {
+  font: normal 1.6em/1.5 "Source Sans Pro", sans-serif; }
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #feffff;
+  padding-bottom: 4rem; }
+  footer h2 {
+    font-family: 'vidaloka', sans-serif;
+    color: #554c60;
+    text-transform: uppercase;
+    word-spacing: .5rem;
+    letter-spacing: .2rem;
+    margin-bottom: 1.5rem; }
+  footer a, footer a:link {
+    color: #554c60; }
+  footer a:hover {
+    color: #6e637c; }
+
+section {
+  width: 100%;
+  display: block;
+  padding: 1.5rem 0 2rem;
+  margin-bottom: 2rem; }

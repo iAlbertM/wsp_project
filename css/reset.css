@@ -14,7 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, ::after, ::before {
 	font: inherit;
 	margin: 0; 
 	padding: 0;
@@ -74,12 +74,12 @@ sub {
 /* BASE FONT
 ======================================== */
 html { font-size: 62.5%; }
-body { font: normal 1em/1.5; }
+body { font: normal 1em/1.5 "Source Sans Pro", sans-serif; }
 
 
 /* LISTS - Clear bullets
 ======================================== */
-ol, ul { list-style: none; }
+ol, ul { list-style: none;}
 
 
 /* QUOTES 

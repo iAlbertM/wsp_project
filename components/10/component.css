@@ -1,8 +1,163 @@
 /* 
-================================================================================
+=====================================
 COMPONENT STYLESHEET
-================================================================================ */
+===================================== */
 
-/* HEADER ======================================== */
+body {
+	font: normal 1em/1.5 'Source Sans Pro', sans-serif;
+}
+/* position footer */
 
-/* HEADER ======================================== */
+footer {
+	width: 100%;
+	bottom: 0;
+	background: #feffff;
+	padding-bottom: 4rem;
+}
+/* link headings */
+
+footer h2 {
+	font-family: 'vidaloka', sans-serif;
+	font-size: 2rem;
+	color: #554c60;
+	text-transform: uppercase;
+	word-spacing: 0.5rem;
+	letter-spacing: 0.2rem;
+	margin-bottom: 1rem;
+}
+/* links */
+
+footer a,
+footer a:link,
+footer li[title] {
+	display: block;
+	color: #554c60;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	padding: 1rem 1rem;
+}
+
+footer a:hover {
+	color: #6e637c;
+}
+/* stack sections verticlly -mobile*/
+
+section {
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+form {
+	width: 100%;
+}
+/* newsletter sign up field */
+
+form input {
+	box-shadow: 0 0 0 10rem rgb(246, 247, 248) inset;
+	font-size: 1.2rem;
+	border: none;
+	line-height: 3;
+	width: 100%;
+	margin-bottom: 1.5rem;
+	padding: .5rem 1rem;
+}
+/* form button */
+
+form input[type="submit"] {
+	box-shadow: 0 0 0 10rem #554c60 inset;
+	color: white;
+}
+/* store information */
+
+footer li[title],
+footer a[title],
+footer a:link[title] {
+	color: rgb(183, 191, 199);
+	display: inline-block;
+	padding: .5rem;
+	margin-right: .2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+/* RESPONSIVE STYLING 
+===================================== */
+
+@media (min-width: 800px) {
+	/* white space @ footer end */
+	
+	footer {
+		position: fixed;
+	}
+	.wrapper {
+		margin: auto;
+		width: 100%;
+		max-width: 100rem;
+		position: relative;
+	}
+	/* links */
+	
+	footer a,
+	footer a:link,
+	footer li[title] {
+		font-size: 1rem;
+		text-transform: uppercase;
+		padding: .5rem;
+	}
+	/* horizontal alignment */
+	
+	section:nth-child(4) {
+		margin-right: 2rem;
+		margin-bottom: 20rem;
+	}
+	/* even spacing */
+	
+	section:not(:last-child) {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 2rem;
+		width: calc(96rem / 4 - 10rem / 3);
+	}
+	section {
+		margin: auto;
+	}
+	/* position store info section*/
+	
+	footer section:last-child {
+		margin-right: 5rem;
+		text-align: left;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		max-width: calc(25% - 1rem);
+	}
+	footer section:last-child li,
+	footer section:last-child a,
+	footer section:last-child a:link {
+		margin: 0;
+		padding: 0;
+		font-size: 1rem;
+		line-height: 1;
+	}
+	/* white space under title links  */
+	
+	footer h2 {
+		font-size: 1.4em;
+		margin-bottom: 6px;
+	}
+	/* newsletter sign up field */
+	
+	form input {
+		font-size: 1.2rem;
+		line-height: 1;
+		padding: .5rem 1rem;
+	}
+	/* form button */
+	
+	form input[type="submit"] {
+		max-width: 10rem;
+		text-transform: uppercase;
+		float: right;
+		line-height: 2;
+		color: white;
+	}
+}
