@@ -75,7 +75,7 @@ section li:nth-child(2n+5)::before {
 	content:"";
 	display: block;
 	padding: 0 10%;
-	margin-bottom: 40rem;
+	margin-bottom: 4rem;
 }
 
 /* image replacement technique - hide text */
