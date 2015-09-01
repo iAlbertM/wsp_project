@@ -187,22 +187,15 @@ RESPONSIVE STYLING
 
 	/*	layout horizontally */
 	nav,
-	h1, img[alt*=logo] {
+	h1, header img{
 		display: inline-block;
-	}
-/* float logo + h1 left */
-	header img, h1 {
-		float: left;
-	}
-	header::after {
-		content:"";
-		display: table;
-		clear: both;
+		vertical-align: middle;
 	}
 	
 	/*	position to right */
 	nav {
 		float: right;
+		width:75%;
 	}
 	
 	/*	keep list items inline + equal spacing */
@@ -212,6 +205,13 @@ RESPONSIVE STYLING
 		width: calc(100%/10 - 3.6rem/10)
 	}
 	
+	nav:hover li {
+		display: inline-block;
+/*		margin-top:;*/
+		cursor: pointer;
+/*		line-height: 2;*/
+/*		z-index: 1;*/
+	}
 	/*	keep "to top" link seperate*/
 	nav li:last-of-type {
 		position: fixed;
