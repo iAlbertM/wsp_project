@@ -1,2 +1,8 @@
 
+<<<<<<< HEAD
 *.codekit
+=======
+*.zip
+*media-queries.css
+*.pdf
+>>>>>>> origin/gh-pages
