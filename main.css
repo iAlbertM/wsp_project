@@ -1,0 +1,484 @@
+/* 
+================================================================================
+COMPONENT STYLESHEET
+================================================================================ */
+/* vertical stack */
+header {
+	text-align: center;
+	background: #ff673b;
+	padding: 1rem;
+}
+
+header li, h1 {
+	padding: 1rem;
+	text-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+/* logotype */
+header h1 {
+	font: 900 normal 5rem/1.5 'comfortaa',sans-serif;
+}
+
+/* links - normal state */
+header a, header a:link {
+	color: hsla(0, 0%, 100%, 0.55);
+	font-size: 1.8rem;
+	text-transform: uppercase;
+}
+
+/* links - hover|active state */
+header a:hover, header a:active, h1 {
+	color: white;
+}
+
+header > ul li:not(:last-child) {
+	display: inline-block;
+}
+
+/* image replacement technique - hide text */
+header > ul li:not(:last-child) a {
+	text-align: center;
+	width: 3rem;
+	height: 2.4rem;
+	padding-top: 3rem;
+	overflow: hidden;
+	border: none;
+}
+header span {
+	display: none;
+	color: hsla(0, 0%, 100%, 0.55);
+}
+header a[href*="twitter"], 
+header a[href*="facebook"],
+header a[href*="linkedin"] {
+	opacity: 0.5;
+	float: left;
+}
+/* hover + active states */
+header a[href*="twitter"]:hover, 
+header a[href*="facebook"]:hover,
+header a[href*="linkedin"]:hover {
+	opacity: 1;
+}
+/* image replacement for social links - normal */
+header a[href*="twitter"] {
+	background: url('twitter.png') no-repeat;
+}
+header a[href*="facebook"] {
+	background: url('facebook.png') no-repeat;
+}
+header a[href*="linkedin"] {
+	background: url('linkedin.png') no-repeat;
+}
+
+
+
+
+
+
+@media (min-width: 600px) {
+	header {
+		padding: 1rem 2rem 0 
+	}
+	/* logo */
+	header h1 {
+		padding: 0;
+		font-size: 4rem;
+		position: absolute;
+		left: 45%;
+	}
+	/* social stats */
+	header span {
+		display: inline;
+		font-size: 1.3rem
+	}
+	
+	/* style and position header links */
+	header a, header a:link {
+		font-size: 1.6rem;
+/*		transition: all .25s ease-in-out;*/
+	}
+	/* position of header list items */
+	header nav, header nav li, header > ul li {
+		float: left;
+	}
+	/* position ul + download link */
+	header > ul, header a[title*="Download"] {
+		float: right;
+	}
+	
+
+	header span {
+		padding-top: .5rem;
+	}
+		
+}
+/* clear fix */
+header::after, header ul::after, header ul::before {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+/* cta styles */
+
+/* 
+================================================================================
+COMPONENT STYLESHEET
+================================================================================ */
+
+
+/* SECTION 
+======================================== */
+
+cta section {
+	background: rgba(10, 0, 30, 0.7) url("bg.jpg") center/cover no-repeat;
+	padding: 10rem 1rem;
+	position: relative;
+}
+
+/* TYPOGRAPHY
+======================================== */
+/* basee typography - mobile */
+cta p, li,a, a:link,h2 {
+	color: hsla(0, 0%, 100%, .6);
+	text-align: center;
+	text-transform: uppercase;
+	word-spacing: .15em;
+	font-size: 1.6rem;
+} 
+
+/* lead text */
+cta section p:first-child {
+	font-size: 1.2rem;
+	color: hsla(0, 0%, 100%, .5);
+}
+
+/* main heading */
+cta section h2 {
+	font-size: 5rem;
+	font-weight: 100;
+	line-height: 1.5;
+	letter-spacing: .26em;
+	color: white;
+	text-shadow: 0 0 .5rem rgb(88, 4, 255);
+}
+
+/* normal text */
+cta p { letter-spacing: .4rem; }
+
+/* IR */
+cta section h1 {
+	margin: 2rem auto;
+	border: none;	
+	/* hide text */
+	display: block;
+	width: 20rem;
+	height: 1rem;
+	padding-top: 5rem;
+	overflow: hidden;
+
+	/* image replacement */	
+	background: url(logo.png) no-repeat center;
+	background-size: 40%;
+}
+
+
+
+
+/* LINK + DESIGN ELEMENT
+======================================== */
+/* cta link */
+cta section li > a {
+	padding: 3rem 4rem;
+	display: block;
+	margin: 5rem auto;
+	width: 90%;
+	background: rgb(230, 51, 97);
+	border-radius:10rem;
+	position: relative;
+}
+/* more details icon thing at bottom */
+cta section li a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 13rem;
+	left: 40%;
+	background: url("arrow.png") no-repeat center 50%;
+	background-color: white;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 10rem;
+}
+
+@media (min-width: 800px) {
+	cta section {
+		margin: auto;
+		padding-top: 4rem;
+	}
+	/* lead text */
+	cta section p:first-child {
+		margin: 0 auto 8rem auto;
+	}
+	cta section h2 {
+		font-size: 3rem;
+		letter-spacing: 0.4rem;
+		word-spacing: 0.2rem;
+		font-weight: 500;
+		margin-bottom: 2rem;
+		margin-top: 4rem;
+	}
+	cta p {
+		letter-spacing: normal;
+	}
+	cta p:last-of-type {
+		font-style:italic;
+		text-transform: none;
+	}
+	cta section li a {
+		max-width: 30rem;
+		padding: 1.4rem 1rem;
+		font-size: 1rem;
+		position: relative;	
+	}
+	cta section li a::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 10rem;
+		left: 40%;
+		background: url("arrow.png") no-repeat center 50%;
+		background-color: white;
+		width: 5rem;
+		height: 5rem;
+		border-radius: 10rem;
+	}
+}
+
+
+
+
+
+
+
+
+
+/*  grid gallery styles */
+
+/* 
+================================================================================
+COMPONENT STYLESHEET
+================================================================================ */
+
+/* TYPOGRAPHY ======================================== */
+body {
+	font: normal 1em/1.5 'Source Sans Pro', arial, helvetica, sans-serif;
+	background: rgb(238, 243, 245);
+}
+body > section {
+	padding: 1rem;
+	margin: auto;
+}
+a, a:link {
+	color: rgba(146, 150, 157, 0.56);
+}
+a:hover, a:active, a.active {
+	color: rgb(146, 150, 157);
+}
+
+/* HEADER 
+================================*/
+header {
+	margin: auto;
+	text-align: center;
+}
+header::after {
+	content: "";
+	display: block;
+	width: 25%;
+	height: .1rem;
+	margin: 2rem auto;
+	background-color:rgb(27, 123, 162) ;
+}
+h2 {
+	color: rgb(146, 150, 157);
+	font-size: 4rem;
+	font-weight: 100;
+	line-height: 2;
+	letter-spacing: .2rem;
+	text-transform: uppercase;
+}
+/* align items horizontally */
+header li, article li {
+	display: inline-block;
+	text-align: center;
+}
+/* space items evenly */
+header li:not(:last-child), article li:not(:last-child) {
+	margin-right: 1.2rem;
+}
+
+header a, header a:link {
+	font-size: 2rem;	
+}
+
+@media (min-width: 600px) {
+	section {
+		width: 100%;
+		max-width: 1000px;
+	}
+
+	header {
+		text-align: left;
+	}
+	header::after {
+		display: none;
+	}
+	header a, header a:link {
+		font-size: 1.6rem;
+	}
+}
+
+
+
+/* ARTICLE
+================================*/
+article {
+	margin: 2rem auto;
+	width: 100%;
+	overflow: hidden;
+	padding: 1rem;
+}
+article img  {
+	margin: auto;
+}
+article ul {
+	margin-top: -3rem;
+	padding: .1rem 1rem;
+	background: rgb(252, 252, 252);
+	max-width: 37rem;
+}
+
+/* IR */
+article li a {
+	display: inline-block;
+	width:1.6rem;
+	height:1.6rem;
+	text-indent: -99.99rem;
+	vertical-align: text-bottom;
+	overflow: hidden;
+	border: none;
+	margin-top: 1rem;
+	margin-right: .2rem;
+	opacity: 0.5;
+}
+article li > a[title*="Views"] {
+	background: url("iviews.png") no-repeat center center;
+	background-size: 70%;
+}
+article li > a[title*="comments"] {
+	background: url("icomments.png") no-repeat center center;
+	background-size: 70%;
+}
+article li > a[title*="likes"] {
+	background: url("ilikes.png") no-repeat center center;
+	background-size: 70%;
+}
+article li span {
+	font-size: 1.6rem;
+}
+@media (min-width: 60rem) {
+
+	section > section {
+		margin: auto;
+		padding-left: 1.5rem; /* balance article margin below */
+	}
+		/* space evenly into 4col 3row grid */
+	article {
+		margin: 0 1.5rem 1.5rem 0;
+		float: left;
+		width: calc(100% / 2 - 3rem / 2);
+		max-width: 37rem;
+	}
+	article ul {
+		margin-top: -2.5rem;
+	}
+	article li span {
+		font-size: 1.2rem;
+		color: rgba(146, 150, 157, 0.5);
+		vertical-align: bottom;
+	}
+}
+
+@media (min-width: 80rem) {
+	article {
+		width: calc(100% / 3 - 3rem / 2);
+	}
+}
+
+@media (min-width: 100rem) {
+	article {
+		width: calc(100% / 4 - 3rem / 2);
+	}
+}
+
+
+/* FOOTER
+================================*/
+footer {
+	margin-top: .5rem;
+}
+footer img {
+	border-radius: 2rem;
+	margin-right: .5rem;
+}
+footer h3 {
+	font-size: 2rem;
+	display: inline-block;
+}
+footer p {
+	margin-left: 3.4rem;
+}
+footer a, footer a:link {
+	font-size: 1.6rem;
+	color: #18abdd;
+}
+
+@media (min-width: 60rem) {
+	footer {
+		margin-top: .5rem;
+	}
+	footer img {
+		float: left;
+		width:2rem;
+	}
+	footer h3 {
+		font-size: 1.4rem;
+		font-weight: 600;
+		line-height: 1;
+	}
+	footer p, footer a, footer a:link {
+		font-size: 1.2rem;
+		line-height: 1;
+		margin-left: 0;
+	}
+}
+@media (min-width: 80rem) {
+	footer h3 {
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+	footer p, footer a, footer a:link {
+		font-size: 1rem;
+		letter-spacing: .1rem;
+	}
+}
+
