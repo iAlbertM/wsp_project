@@ -2,49 +2,54 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
-
-body {
-	font: normal 1em/1.5 "Source Sans Pro", sans-serif;
-}
 /* space from edge of window & vertical stack */
 
 ul {
-	display: block;
-	padding: 2rem 3%;
+/*	display: block;*/
+	padding: 1rem  ;
 }
 
 /* Event */
 section li {
 	width: 100%;
 	margin-bottom: 60px;
+	font-size: 2.0rem;
+	display: flex;
+	flex-basis:auto;
+	flex-direction: row;
+	flex-flow: row;
 }
-
 /* event date - large date */
 time {
+	box-sizing: border-box;
 	border: 3px solid #58c0e6;
 	font-size: 4.2rem;
 	font-weight: 600;
 	line-height: 1;
 	color: #58c0e6;
 	text-align: center;
-	display: block;
-	width: 100px;
+/*	display: inline-block;*/
+	max-width: 100px;
+	max-height: 100px;
 	border-radius: 100%;
 	padding: 15px 20px;
+	margin: auto;
 }
 /* date - month */
 
 time > abbr {
 	font-size: 2rem;
-	display: block;
+	
 }
 /* text headings */
 
 li > h2 {
 	color: #545454;
-	font-size: 2rem;
+	font-size: 2.4rem;
 	font-weight: 900;
-	line-height: 2.4;
+	line-height: 2.25;
+	text-align: left;
+	display: inline-block;
 }
 /* read more link */
 
