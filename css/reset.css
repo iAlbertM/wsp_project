@@ -82,13 +82,19 @@ body { font: normal 1em/1.5 "Source Sans Pro", sans-serif; }
 ol, ul { list-style: none;}
 
 
-/* QUOTES 
+/* QUOTES & SMALL CAPS
 ======================================== */
 blockquote, q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 q::before, blockquote::before { content: open-quote; }
 q::after, blockquote::after { content: close-quote; }
 
-
+.small-caps {
+    -moz-font-feature-settings: "c2sc", "smcp";
+    -ms-font-feature-settings: "c2sc", "smcp";
+    -webkit-font-feature-settings: "c2sc", "smcp";
+    font-feature-settings: "c2sc", "smcp";
+    letter-spacing: 0.05em;
+}
 /* TABLES 
 ======================================== */
 table {
@@ -124,3 +130,4 @@ hr {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
