@@ -2,6 +2,19 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
+
+#header {
+	padding: 1rem 4rem;
+	margin: 0 auto;
+	min-width: 100%;
+}
+#header h1 {
+	text-align: left;
+	font: 400 normal 1.6rem/2 'Source Sans Pro', sans-serif;
+	color:rgb(0 0 0 / 30%);
+}
+
+
 /* base */
 
 section {

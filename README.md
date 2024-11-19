@@ -1,2 +1,2 @@
-# wsp_project
-Albert Martinez  |  WSP-1507  |  WDD  |  Full Sail University
+# web standards project
+Web Standards Project by Albert Martinez | Front-End Developer

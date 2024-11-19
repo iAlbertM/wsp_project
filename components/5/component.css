@@ -1,209 +1,167 @@
-/* 
-================================================================================
-COMPONENT STYLESHEET
-================================================================================ */
-
-/* TYPOGRAPHY ======================================== */
 body {
-	font: normal 1em/1.5 'Source Sans Pro', arial, helvetica, sans-serif;
-	background: rgb(238, 243, 245);
-}
-body > section {
-	padding: 1rem;
-	margin: auto;
-}
-a, a:link {
-	color: rgba(146, 150, 157, 0.56);
-}
-a:hover, a:active, a.active {
-	color: rgb(146, 150, 157);
+	height: 100vh;
 }
 
-/* HEADER 
-================================*/
-header {
-	margin: auto;
-	text-align: center;
+#header {
+	padding: 1rem 4rem;
+	margin: 0 auto;
+	min-width: 100%;
 }
-header::after {
-	content: "";
+#header h1 {
+	text-align: left;
+	font: 400 normal 1.6rem/2 'Source Sans Pro', sans-serif;
+	color:rgb(0 0 0 / 30%);
+}
+
+.container {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	align-content: center;
+	justify-items: center;
+	min-width: 320px;
+}
+
+body {
+	height: 100vh;
+	background: url(bg.jpg);
+	background-size: cover;
+	margin: 1rem auto;
+	padding: 1rem 0.5rem;
+	background-color: rgba(255, 255, 255, 0.3);
+	background-blend-mode: lighten;
+}
+
+.container {
+	width: 100%;
+	min-height: 100%;
+	margin: 0 auto;
+	padding: .5rem;
+}
+
+.grid_item {
+	display: flex;
+	position: relative;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: space-evenly;
+
+	background: rgb(255, 255, 255);
+	background-image: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(246, 246, 246, 1) 18%,
+		rgba(252, 252, 252, 1) 23%,
+		rgba(237, 237, 237, 1) 37%,
+		rgba(255, 255, 255, 1) 68%
+	);
+	height: 24vh;
+	width: 100%;
+	max-width: 400px;
+	margin-bottom: 2rem;
+	padding: 20px;
+	transition: all .25s ease-in-out;
+	box-shadow: 0.1rem 0.2rem 0.4rem 0 rgb(0 0 0 / 30%), 0 0 0.4rem 0.2rem rgb(0 0 0 / 30%);
+}
+
+header,
+.product_img,
+p a,
+p a:link {
 	display: block;
-	width: 25%;
-	height: .1rem;
-	margin: 2rem auto;
-	background-color:rgb(27, 123, 162) ;
+	width: 33%;
+	height: 100%;
 }
+
+header,
+.product_img,
+.grid_item p {
+	position: absolute;
+	padding: 0.5rem;
+}
+
+header,
+h2 { z-index: 109; }
+
+.product_img,
+img {	z-index: 89; }
+
+.grid_item p {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 99;
+}
+
+p a,
+p a:link {
+	color: #999;
+	font: 600 normal 1.2rem/1 "Open Sans", sans-serif;
+	padding: .5rem;
+	transition: color .25s ease-in-out;
+}
+
+p a:hover,
+p a:focus {
+	color: #000;
+	transition: color .25s ease-in-out;
+}
+
+.grid_item header,
+.grid_item p {
+	margin-left: 1rem;
+}
+
+header {
+	left: 0;
+	top: 0;
+	height: 3rem;
+	width: 40%;
+}
+
+.product_img {
+	display: flex;
+	align-items: center;
+	align-content: flex-center;
+	justify-content: flex-end;
+	width: 60%;
+	top: 0;
+	right: 0;
+}
+
+img {
+	max-width: 129px;
+	max-height: 91px;
+}
+
 h2 {
-	color: rgb(146, 150, 157);
-	font-size: 4rem;
-	font-weight: 100;
-	line-height: 2;
-	letter-spacing: .2rem;
+	font-size: 1.8rem;
 	text-transform: uppercase;
 }
-/* align items horizontally */
-header li, article li {
-	display: inline-block;
-	text-align: center;
-}
-/* space items evenly */
-header li:not(:last-child), article li:not(:last-child) {
-	margin-right: 1.2rem;
-}
 
-header a, header a:link {
-	font-size: 2rem;	
-}
+.grid_item > p { bottom: 0;}
 
-@media (min-width: 600px) {
-	section {
-		width: 100%;
-		max-width: 1000px;
+@media screen and (min-width: 502px) {
+	.container {
+		max-width: 960px;
+		padding: 2rem;
+		justify-content: space-between;
+		flex-flow: row wrap;
 	}
 
-	header {
-		text-align: left;
+	.grid_item {
+		width: 48%;
+		max-width: 640px;
+		height: 108px;
+		margin-bottom: 1rem;
 	}
-	header::after {
-		display: none;
-	}
-	header a, header a:link {
-		font-size: 1.6rem;
-	}
+
+	.product_img img { max-height: 99%;	}
 }
 
-
-
-/* ARTICLE
-================================*/
-article {
-	margin: 2rem auto;
-	width: 100%;
-	overflow: hidden;
-	padding: 1rem;
-}
-article img  {
-	margin: auto;
-}
-article ul {
-	margin-top: -3rem;
-	padding: .1rem 1rem;
-	background: rgb(252, 252, 252);
-	max-width: 37rem;
-}
-
-/* IR */
-article li a {
-	display: inline-block;
-	width:1.6rem;
-	height:1.6rem;
-	text-indent: -99.99rem;
-	vertical-align: text-bottom;
-	overflow: hidden;
-	border: none;
-	margin-top: 1rem;
-	margin-right: .2rem;
-	opacity: 0.5;
-}
-article li > a[title*="Views"] {
-	background: url("iviews.png") no-repeat center center;
-	background-size: 70%;
-}
-article li > a[title*="comments"] {
-	background: url("icomments.png") no-repeat center center;
-	background-size: 70%;
-}
-article li > a[title*="likes"] {
-	background: url("ilikes.png") no-repeat center center;
-	background-size: 70%;
-}
-article li span {
-	font-size: 1.6rem;
-}
-@media (min-width: 60rem) {
-
-	section > section {
-		margin: auto;
-		padding-left: 1.5rem; /* balance article margin below */
-	}
-		/* space evenly into 4col 3row grid */
-	article {
-		margin: 0 1.5rem 1.5rem 0;
-		float: left;
-		width: calc(100% / 2 - 3rem / 2);
-		max-width: 37rem;
-	}
-	article ul {
-		margin-top: -2.5rem;
-	}
-	article li span {
-		font-size: 1.2rem;
-		color: rgba(146, 150, 157, 0.5);
-		vertical-align: bottom;
+@media screen and (min-width: 844px) {
+	.grid_item {
+		width: 32%;
+		max-width: 300px;
 	}
 }
-
-@media (min-width: 80rem) {
-	article {
-		width: calc(100% / 3 - 3rem / 2);
-	}
-}
-
-@media (min-width: 100rem) {
-	article {
-		width: calc(100% / 4 - 3rem / 2);
-	}
-}
-
-
-/* FOOTER
-================================*/
-footer {
-	margin-top: .5rem;
-}
-footer img {
-	border-radius: 2rem;
-	margin-right: .5rem;
-}
-footer h3 {
-	font-size: 2rem;
-	display: inline-block;
-}
-footer p {
-	margin-left: 3.4rem;
-}
-footer a, footer a:link {
-	font-size: 1.6rem;
-	color: #18abdd;
-}
-
-@media (min-width: 60rem) {
-	footer {
-		margin-top: .5rem;
-	}
-	footer img {
-		float: left;
-		width:2rem;
-	}
-	footer h3 {
-		font-size: 1.4rem;
-		font-weight: 600;
-		line-height: 1;
-	}
-	footer p, footer a, footer a:link {
-		font-size: 1.2rem;
-		line-height: 1;
-		margin-left: 0;
-	}
-}
-@media (min-width: 80rem) {
-	footer h3 {
-		font-size: 1.2rem;
-		font-weight: 400;
-	}
-	footer p, footer a, footer a:link {
-		font-size: 1rem;
-		letter-spacing: .1rem;
-	}
-}
-

@@ -2,119 +2,193 @@
 ================================================================================
 COMPONENT STYLESHEET
 ================================================================================ */
-/* vertical stack */
-header {
-	text-align: center;
-	background: #ff673b;
-	padding: 1rem;
+
+/* BASE STYLES
+----------------------- */
+/* spacing around edge for mobile*/
+body { font-size: 1.6rem; }
+section { width: 100%; padding: 10px; }
+
+ #header { 
+	display: block;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	transform:rotateX(90deg);
+	padding: 1rem 4rem;
 }
 
-header li, h1 {
-	padding: 1rem;
-	text-shadow: 0 0 5px rgba(0, 0, 0, .2);
-}
-/* logotype */
-h1 {
-	font: 900 normal 5rem/1.5 'comfortaa',sans-serif;
+#header h1 {
+	display: block;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	transform:rotateX(90deg);
+	padding: 1rem 4rem;
+	/* margin: 0 auto; */
+	width: 120px;
+	text-align: left;
+	font: 400 normal 1.6rem/2 'Source Sans Pro', sans-serif;
+	color:rgb(0 0 0 / 30%);
 }
 
-/* links - normal state */
-header a, header a:link {
-	color: hsla(0, 0%, 100%, 0.55);
-	font-size: 1.8rem;
+
+/* different color for utility nav*/
+section:last-child { background: #efefef; }
+
+ul {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+/* spacing between each li */
+li, a { margin-bottom: 5px; }
+
+li { box-shadow: inset 0px -1px 1px -1px rgb(0 0 0 / 40%); }
+
+a, a:link, a:active {
+	box-sizing: border-box;
+	color: dimgray;
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.8;
+	margin-bottom: 5px;
+	min-height: 44px; /* all links */
+	padding: 15px;
+	transition: all .35s ease-in-out;
+	width: 100%;
+}
+
+a:hover,
+li:hover a,
+li:hover a:link,
+li a.active {
+	color: white;
+	background-color: rgba(0, 0, 0, .4);
+	transition: all 2000 ease-in-out;
+	border-bottom: 1px ridge rgba(105, 105, 105, .8);
+}
+
+/* search input field */
+form {
+	justify-content: flex-end;
+	align-items: baseline;
+}
+
+input {
+	width: 90%;
+	padding: 10px;
+	border: 1px solid dimgray;
+	border-radius: 5px;
+	color: darkgray;
+}
+
+/* TYPOGRAPHY
+----------------------- */
+
+/* uppercase for all text */
+h2,
+a {
 	text-transform: uppercase;
 }
 
-/* links - hover|active state */
-header a:hover, header a:active, h1 {
-	color: white;
+h2 {
+	font-size: 3rem;
+	font-weight: 200;
+	letter-spacing: 1rem
 }
 
-header > ul li:not(:last-child) {
-	display: inline-block;
-}
-
-/* image replacement technique - hide text */
-header > ul li:not(:last-child) a {
-	text-align: center;
-	width: 3rem;
-	height: 2.4rem;
-	padding-top: 3rem;
-	overflow: hidden;
-	border: none;
-}
-header span {
-	display: none;
-	color: hsla(0, 0%, 100%, 0.55);
-}
-header a[href*="twitter"], 
-header a[href*="facebook"],
-header a[href*="linkedin"] {
-	opacity: 0.5;
-	float: left;
-}
-/* hover + active states */
-header a[href*="twitter"]:hover, 
-header a[href*="facebook"]:hover,
-header a[href*="linkedin"]:hover {
-	opacity: 1;
-}
-/* image replacement for social links - normal */
-header a[href*="twitter"] {
-	background: url('twitter.png') no-repeat;
-}
-header a[href*="facebook"] {
-	background: url('facebook.png') no-repeat;
-}
-header a[href*="linkedin"] {
-	background: url('linkedin.png') no-repeat;
+/* utility navigation */
+section:last-child a {
+	color: hsla(0, 0%, 10%, .4);
 }
 
 
 
-
-
-
-@media (min-width: 600px) {
-	header {
-		padding: 1rem 2rem 0 
+/* ===========================
+	RESPONSIVE STYLES 
+	===== */	
+@media all and (min-width: 720px) {
+	/* allow content to span across entire width */
+	section {
+		width: 100%;
 	}
-	/* logo */
-	h1 {
-		padding: 0;
-		font-size: 4rem;
+
+	/*	spacing for global nav from top due to utility nav position */
+	section:first-child {
+		margin-top: 100px;
+	}
+
+	section:first-child a,
+	section:first-child li,
+	form input {
+		font-size: .9em;
+		margin: 17px 4px;
+	}
+
+	/*	position utility nav */
+	section:last-child {
 		position: absolute;
-		left: 45%;
+		top: 0;
 	}
-	/* social stats */
-	header span {
-		display: inline;
-		font-size: 1.3rem
-	}
-	
-	/* style and position header links */
-	header a, header a:link {
-		font-size: 1.6rem;
-/*		transition: all .25s ease-in-out;*/
-	}
-	/* position of header list items */
-	nav, nav li, header > ul li {
-		float: left;
-	}
-	/* position ul + download link */
-	header > ul, header a[title*="Download"] {
-		float: right;
-	}
-	
 
-	header span {
-		padding-top: .5rem;
+	/*	font-size for utility nav*/
+	li > a,
+	li > a:link {
+		display: block;
+		width: 100%;
+		padding: 10px;
 	}
-		
-}
-/* clear fix */
-header::after, header ul::after, header ul::before {
-	content: "";
-	display: block;
-	clear: both;
+
+	li:hover > a,
+	li > a:hover {
+		background-color: hsla(0, 0%, 10%, .4);
+		color: white;
+	}
+
+	li a.active,
+	li a:active {
+		border-bottom: 1px ridge rgba(105, 105, 105, .8);
+	}
+
+	section:last-child a {
+		font-size: 0.75em;
+	}
+
+	nav > ul, .wrapper, .wrapper > ul, form {
+		width: 100%;
+		display: flex;
+		flex-flow: row nowrap;
+	}
+
+	/*	constrained the width of content*/
+	.wrapper {
+		display: flex;
+		max-width: 960px;
+		margin: 0 auto;
+		justify-content: space-between;
+		align-content: center;
+		align-items: baseline;
+	}
+
+	.wrapper > ul {
+		justify-content: flex-start;
+		align-items: baseline;
+	}
+
+	/* form amd input */
+	form {
+		justify-content: flex-end;
+	}
+
+	form input {
+		max-width: 90%;
+		padding: 10px;
+		border: 0;
+		border-radius: 5px;
+		color: darkgray;
+	}
 }

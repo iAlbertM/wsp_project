@@ -1,86 +1,105 @@
-/* 
-================================================================================
+/* ==========================================
 COMPONENT STYLESHEET
-================================================================================ */
-
-
-/* SECTION 
 ======================================== */
-
-section {
-	background: rgba(10, 0, 30, 0.7) url("bg.jpg") center/cover no-repeat;
-	padding: 10rem 1rem;
+body {
+	background: url(bg.jpg) center/cover no-repeat;
+	background-color:rgba(55, 0, 107, 0.753);
+	background-blend-mode: overlay;
 	position: relative;
+	width: 100%;
+	min-width: 200px;
+	height: 100vh;
 }
 
-/* TYPOGRAPHY
-======================================== */
-/* basee typography - mobile */
-p, li,a, a:link,h2 {
-	color: hsla(0, 0%, 100%, .6);
-	text-align: center;
-	text-transform: uppercase;
-	word-spacing: .15em;
-	font-size: 1.6rem;
-} 
+#header {
+	padding: 1rem 4rem;
+	margin: 0 auto;
+	min-width: 100%;
+}
+#header h1 {
+	text-align: left;
+	font: 400 normal 1.6rem/2 'Source Sans Pro', sans-serif;
+	color:rgb(255 255 255 / 30%);
+}
 
-/* lead text */
-section p:first-child {
-	font-size: 1.2rem;
-	color: hsla(0, 0%, 100%, .5);
+section { padding: 4rem 1.2rem; }
+
+h2, h3, img, p, a, a:link, p a::after { display:block; }
+
+h3, p, a, a:link {
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+/* TYPOGRAPHY ================ */
+/* base typography - mobile */
+h3, p:first-child, p a {
+	text-transform: uppercase;
+	color: hsla(0, 0%, 100%, 0.4);
+}
+
+/* hide h1 text */
+h2 {
+	visibility: hidden;
+}
+
+/* show logo */
+img {
+	width: 100%;
+	max-width: 8rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* main heading */
-section h2 {
-	font-size: 5rem;
-	font-weight: 100;
-	line-height: 1.5;
-	letter-spacing: .26em;
+h3 {
+	font: 400 4rem/1.4 "Open Sans", sans-serif;
+	letter-spacing: .4rem;
 	color: white;
+	padding: 20px 2px;
 	text-shadow: 0 0 .5rem rgb(88, 4, 255);
 }
 
-/* normal text */
-p { letter-spacing: .4rem; }
+/* lead text */
+p:first-child {
+	font: 400 1.1rem/1 "Open Sans", sans-serif;
+}
 
-/* IR */
-section h1 {
-	margin: 2rem auto;
-	border: none;	
-	/* hide text */
-	display: block;
-	width: 20rem;
-	height: 1rem;
-	padding-top: 5rem;
-	overflow: hidden;
-
-	/* image replacement */	
-	background: url(logo.png) no-repeat center;
-	background-size: 40%;
+/* tag line */
+p.subheading {
+	color:hsla(0, 0%, 100%, 0.7);
+	font-style:italic;
+	letter-spacing: .8px;
 }
 
 
-
-
-/* LINK + DESIGN ELEMENT
-======================================== */
-/* cta link */
-section li > a {
-	padding: 3rem 4rem;
-	display: block;
-	margin: 5rem auto;
-	width: 90%;
+/* CTA + PLAY BTN ===========*/
+/* cta btn */
+p > a:link {
 	background: rgb(230, 51, 97);
 	border-radius:10rem;
+	margin: 5rem auto;
+	padding: 1.5rem 2rem;
+	width: 90%;
 	position: relative;
+	color: white;
+	font-weight: 600;
+	font-size: 1.6rem;
+	transition: all .25s ease-in-out;
 }
-/* more details icon thing at bottom */
-section li a::after {
+/* cta hover state */
+p > a:hover {
+	background-color: rgb(139,11,43);
+	box-shadow: inset 0 0 5px 1px rgba(230, 51, 97, 1);
+	transition: all .25s ease-in-out;
+
+}
+/* play btn */
+p > a::after {
 	content: "";
-	display: block;
 	position: absolute;
-	top: 13rem;
-	left: 40%;
+	top: 10rem;
+	left: 41.7%;
 	background: url("arrow.png") no-repeat center 50%;
 	background-color: white;
 	width: 5rem;
@@ -88,46 +107,19 @@ section li a::after {
 	border-radius: 10rem;
 }
 
-@media (min-width: 800px) {
+/* RESPONSIVE STYLES: TABLET TO DESKTOP ===========*/
+@media all and (min-width: 700px) {
 	section {
-		margin: auto;
-		padding-top: 4rem;
+		max-width: 960px;
+		margin: 0 auto;
 	}
-	/* lead text */
-	section p:first-child {
-		margin: 0 auto 8rem auto;
+
+	h3 {
+		margin-bottom:0;
+		margin-top: 2rem;
 	}
-	section h2 {
-		font-size: 3rem;
-		letter-spacing: 0.4rem;
-		word-spacing: 0.2rem;
-		font-weight: 500;
-		margin-bottom: 2rem;
-		margin-top: 4rem;
-	}
-	p {
-		letter-spacing: normal;
-	}
-	p:last-of-type {
-		font-style:italic;
-		text-transform: none;
-	}
-	section li a {
+
+	p > a:link {
 		max-width: 30rem;
-		padding: 1.4rem 1rem;
-		font-size: 1rem;
-		position: relative;	
-	}
-		section li a::after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 10rem;
-		left: 40%;
-		background: url("arrow.png") no-repeat center 50%;
-		background-color: white;
-		width: 5rem;
-		height: 5rem;
-		border-radius: 10rem;
 	}
 }

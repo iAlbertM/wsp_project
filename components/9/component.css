@@ -1,105 +1,184 @@
+/* 
+===========================
+COMPONENT 9 STYLESHEET
+====================== */
+* {
+	box-sizing: border-box;
+}
+/* TYPOGRAPHY ============ */
+
+/* base font */
 body {
-	font: normal 1.6em/1.5 'roboto condensed', sans-serif;
+	line-height: 1.6;
+	color: rgba(0 0 0 / 50%);
 }
 
-section {
-	background: url('bg2.jpg') center center no-repeat;
-	background-size: cover;
-	min-height: 100%;
+
+#header {
+	padding: 1rem 4rem;
+	margin: 0 auto;
+	min-width: 100%;
+}
+#header h1 {
+	text-align: left;
+	font: 400 normal 1.6rem/2 'Source Sans Pro', sans-serif;
+	color:rgb(0 0 0 / 30%);
+}
+
+/* headings + cta */
+h2, h3, form p, input[type="button"] {
+	margin-bottom: 2rem;
+	color: #fff;
+}
+
+h2, h3 {
+	text-transform: uppercase;
+	letter-spacing: 1.2rem;
+	line-height: 3;
+	font-weight: 300;
+}
+
+/* main heading */
+h2 {
+	font-size: 4rem;
+	color: #1d1d1d;
+}
+
+/* form heading */
+h3 { font-size: 2.7rem; }
+
+/* SIGN-UP FORM */
+/* Whitespace Headings */
+.main_content, form {
+	width: 100%;
+	margin-bottom: 3rem;
+	padding: 3rem;
 }
 
 form {
-	padding: 8rem 1rem;
-	margin: auto;
+	background: #131313;
+	margin-bottom: 0;
+	padding-bottom: 2rem;
 }
 
-h2,
-p,
-input,
-label {
-	text-align: center;
+
+/* general form input */
+form input {
+    border: 1px solid #272727;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 6px;
+	 line-height: 2;
+	 transition: all 0.25s ease-out;
 }
 
-h2 {
-	color: hsla(0, 0%, 100%, 0.8);
-	font-size: 4rem;
-	text-transform: uppercase;
-	letter-spacing: 0.4rem;
-	margin-bottom: 4rem;
-}
-/* form 1st paragraph element */
+/* email input field
+form input[type="email"] {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+} */
 
-p:first-of-type {
-	background: linear-gradient(to right, rgba(149, 149, 149, 0.5) 4.6rem, rgba(149, 149, 149, 0.3) 4.6rem, rgba(149, 149, 149, 0.3)100%);
-	border-radius: .1rem;
-	box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.1), 0 0 100px 1px rgba(255, 255, 255, 0.1) inset;
-	position: relative;
-}
-/* email icon */
-
-p:first-of-type::after {
-	content: "";
-	background: url('email.png') center center no-repeat;
-	background-size: 100%;
-	width: 1.5rem;
-	height: 1.5rem;
-	position: absolute;
-	top: 2rem;
-	right: 1rem;
+/* email input field hover */
+form input[type="email"]:hover {
+	border-color: hsl(0, 0%, 50%);
+	color: white;
 }
 
-label,
-input[type="email"],
-input[type="submit"] {
-	font-size: 1.4rem;
-	color: hsla(0, 0%, 100%, 0.9);
+input[type="email"]::placeholder { 
+	font: italic 1.4rem/2 "Open Sans", sans-serif;
 }
 
-label {
-	font-weight: 100;
-	position: absolute;
-	top: 2rem;
-	left: .8rem;
-	font-family: 'roboto condensed', sans-serif;
+/* FOR TEXT ON DARK COLORED BG'S	 */
+form p, input[type="email"]::placeholder { 
+	color: rgb(255 255 255 / 50%);
 }
 
-input[type="email"],
-input[type="submit"] {
-	background: transparent;
-	color: hsla(0, 0%, 100%, 1);
-	padding: 2rem 2rem 2rem 3rem;
-	width: 90%;
-}
-
-input[type="email"] {
-	text-align: left;
-	border: none;
-}
-
-input[type="submit"] {
-	background: transparent;
+form input[type="email"], 
+form input[type="button"] {
 	width: 100%;
-	border: hsla(0, 0%, 100%, 0.5) solid 1px;
-	text-transform: uppercase;
-	margin-top: 4rem;
+	background: rgb(1 1 1 / 32%);
+	
 }
 
+form input[type="email"]:focus { 
+	outline: none;
+	
+}
+
+
+/* subscribe button */
+form input[type="button"] {
+	color: white;
+	font-weight: 400;
+	background: #000000;
+	box-shadow: 0 -1px 1px 0 rgb(255 255 255 / 50%), 0 0 4px 1px rgb(1 1 1 / 30%);
+	border: 1px inset rgb(255 255 255 / 40%);
+	transition: all 0.25s ease-in;
+	padding: 1.3rem 2rem;
+}
+/* subscribe button hover */
+form input[type="button"]:hover {
+	background: #313131;
+	box-shadow: 0 1px 1px 0 #fff, 0 0 2px 0 rgb(0 0 0 / 50%);
+	transition: all 0.25s ease-in;
+}
+
+
+
+/*  ===================
+RESPONSIVE STYLES 
+===================*/
 @media (min-width: 700px) {
-	form {
-		width: 90%;
+	/* restrict size + align center */
+	section {
+		position: relative;
 		max-width: 960px;
-		padding: 10rem 0;
+		margin: 0 auto;
+		background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba 33%);
 	}
+
+	.main_content {
+		max-width: calc(100% / 3);
+	}
+	
+	section::before {
+		content: "";
+    display: block;
+    width: 80%;
+    height: 105%;
+    position: absolute;
+    background: rgb(236, 236, 236);
+    z-index: -1;
+    padding-bottom: 2rem;
+	}
+
+	/* adjust img size */
+	section img {
+		position: absolute;
+		max-width: 35%;
+		top: 56%;
+		left: 33%;
+	}
+	
 	h2 {
-		font-size: 2rem;
+		line-height: 2;
 	}
-	form p:not(:last-of-type) {
-		display: inline-block;
-		margin-right: 4rem;
-		width: 75%;
+	/* position form */
+	form {
+		max-width: 44%;
+		position: absolute;
+		top: 104%;
+		left: 57%;
+		padding: 1rem 2rem
 	}
-	form p:last-of-type {
-		display: inline-block;
-		width: 20%;
+
+	form p, form input[type="button"] {
+		margin-bottom: 4rem;
+	}
+
+	form input[type="button"] {
+		letter-spacing: 0.1rem;
+		padding: 1.3rem 2rem;
 	}
 }

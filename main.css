@@ -51,7 +51,7 @@ header a[href*="twitter"],
 header a[href*="facebook"],
 header a[href*="linkedin"] {
 	opacity: 0.5;
-	float: left;
+	
 }
 /* hover + active states */
 header a[href*="twitter"]:hover, 
@@ -70,6 +70,10 @@ header a[href*="linkedin"] {
 	background: url('linkedin.png') no-repeat;
 }
 
+.wrapper { 
+	display: flex;
+	flex-direction: column;	
+ }
 
 
 
@@ -90,27 +94,7 @@ header a[href*="linkedin"] {
 	header span {
 		display: inline;
 		font-size: 1.3rem
-	}
-	
-	/* style and position header links */
-	header a, header a:link {
-		font-size: 1.6rem;
-/*		transition: all .25s ease-in-out;*/
-	}
-	/* position of header list items */
-	header nav, header nav li, header > ul li {
-		float: left;
-	}
-	/* position ul + download link */
-	header > ul, header a[title*="Download"] {
-		float: right;
-	}
-	
-
-	header span {
-		padding-top: .5rem;
-	}
-		
+	}		
 }
 /* clear fix */
 header::after, header ul::after, header ul::before {
@@ -138,7 +122,7 @@ COMPONENT STYLESHEET
 /* SECTION 
 ======================================== */
 
-cta section {
+.cta section {
 	background: rgba(10, 0, 30, 0.7) url("bg.jpg") center/cover no-repeat;
 	padding: 10rem 1rem;
 	position: relative;
@@ -147,7 +131,7 @@ cta section {
 /* TYPOGRAPHY
 ======================================== */
 /* basee typography - mobile */
-cta p, li,a, a:link,h2 {
+.cta p, li,a, a:link,h2 {
 	color: hsla(0, 0%, 100%, .6);
 	text-align: center;
 	text-transform: uppercase;
@@ -156,13 +140,13 @@ cta p, li,a, a:link,h2 {
 } 
 
 /* lead text */
-cta section p:first-child {
+.cta section p:first-child {
 	font-size: 1.2rem;
 	color: hsla(0, 0%, 100%, .5);
 }
 
 /* main heading */
-cta section h2 {
+.cta section h2 {
 	font-size: 5rem;
 	font-weight: 100;
 	line-height: 1.5;
@@ -172,10 +156,10 @@ cta section h2 {
 }
 
 /* normal text */
-cta p { letter-spacing: .4rem; }
+.cta p { letter-spacing: .4rem; }
 
 /* IR */
-cta section h1 {
+.cta section h1 {
 	margin: 2rem auto;
 	border: none;	
 	/* hide text */
@@ -196,7 +180,7 @@ cta section h1 {
 /* LINK + DESIGN ELEMENT
 ======================================== */
 /* cta link */
-cta section li > a {
+.cta section li > a {
 	padding: 3rem 4rem;
 	display: block;
 	margin: 5rem auto;
@@ -206,7 +190,7 @@ cta section li > a {
 	position: relative;
 }
 /* more details icon thing at bottom */
-cta section li a::after {
+.cta section li a::after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -220,15 +204,15 @@ cta section li a::after {
 }
 
 @media (min-width: 800px) {
-	cta section {
+	.cta section {
 		margin: auto;
 		padding-top: 4rem;
 	}
 	/* lead text */
-	cta section p:first-child {
+	.cta section p:first-child {
 		margin: 0 auto 8rem auto;
 	}
-	cta section h2 {
+	.cta section h2 {
 		font-size: 3rem;
 		letter-spacing: 0.4rem;
 		word-spacing: 0.2rem;
@@ -236,20 +220,20 @@ cta section li a::after {
 		margin-bottom: 2rem;
 		margin-top: 4rem;
 	}
-	cta p {
+	.cta p {
 		letter-spacing: normal;
 	}
-	cta p:last-of-type {
+	.cta p:last-of-type {
 		font-style:italic;
 		text-transform: none;
 	}
-	cta section li a {
+	.cta section li a {
 		max-width: 30rem;
 		padding: 1.4rem 1rem;
 		font-size: 1rem;
 		position: relative;	
 	}
-	cta section li a::after {
+	.cta section li a::after {
 		content: "";
 		display: block;
 		position: absolute;
@@ -404,7 +388,7 @@ article li span {
 		/* space evenly into 4col 3row grid */
 	article {
 		margin: 0 1.5rem 1.5rem 0;
-		float: left;
+		
 		width: calc(100% / 2 - 3rem / 2);
 		max-width: 37rem;
 	}
@@ -457,7 +441,7 @@ footer a, footer a:link {
 		margin-top: .5rem;
 	}
 	footer img {
-		float: left;
+		
 		width:2rem;
 	}
 	footer h3 {

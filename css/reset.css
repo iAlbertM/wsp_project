@@ -13,17 +13,16 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+main, menu, nav, output, ruby, section, summary,
 time, mark, audio, video, ::after, ::before {
 	font: inherit;
 	margin: 0; 
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: "Source Sans Pro", Arial, Helvetica,  sans-serif;
+	font-family: "Source Sans Pro", 'Roboto', Arial, Helvetica,  sans-serif;
 	vertical-align: baseline;
 	text-decoration: none;
-	box-sizing: border-box;
 }
 
 /* HTML5 - Older browser support 
@@ -73,13 +72,18 @@ sub {
 
 /* BASE FONT
 ======================================== */
+::root {font-size: 62.5% }
 html { font-size: 62.5%; }
-body { font: normal 1em/1.5 "Source Sans Pro", sans-serif; }
+body { 
+   font-size: 1.6rem;
+   line-height: 1.5;
+   font-family: "Open Sans", sans-serif; 
+}
 
 
 /* LISTS - Clear bullets
 ======================================== */
-ol, ul { list-style: none;}
+ol, ul { list-style-type: none;}
 
 
 /* QUOTES & SMALL CAPS
@@ -88,7 +92,7 @@ blockquote, q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 q::before, blockquote::before { content: open-quote; }
 q::after, blockquote::after { content: close-quote; }
 
-.small-caps {
+.smallcaps {
     -moz-font-feature-settings: "c2sc", "smcp";
     -ms-font-feature-settings: "c2sc", "smcp";
     -webkit-font-feature-settings: "c2sc", "smcp";
@@ -125,7 +129,7 @@ hr {
     padding:0;
 }
 
-*, *::before, *::after, html {
+*, *::before, *::after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
